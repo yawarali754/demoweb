@@ -1,0 +1,342 @@
+html,
+body {
+    background-color: #fbfbfb;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.typeahead-dropdown .dropdown-item {
+    padding: 8px !important;
+    font-size: 12px !important;
+}
+
+.form-end-button {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 13px;
+}
+
+.form-end-buttonn {
+    /* display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px; */
+    margin-top: 46px;
+}
+
+.add-button {
+    width: 16px;
+    transform: rotate(45deg);
+    margin-top: -3px;
+}
+
+.cross-button {
+    width: 16px;
+    margin-top: -3px;
+}
+
+.cell-content-center {
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.cell-content-center:nth-child(2) {
+    padding: 0 20px !important;
+}
+
+.btn-succes{
+    background-color: #048BA8;
+    color: #fbfbfb;
+    padding: 4px 8px 4px 8px;
+    border-radius: 2px;
+}
+
+.flight-info-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 24px 8px;
+}
+
+.flight-info-card h5,
+.flight-info-card h6 {
+    margin: 0;
+}
+
+.flight-info-card .middle {
+    margin: 0 20px;
+}
+
+.flight-info-card .corner {
+    flex: 1;
+}
+
+/* .flight-info-card .corner.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+} */
+
+.flight-info-name {
+    /* width: 108px; */
+    font-size: 16px;
+    /* text-align: left; */
+    overflow: hidden;
+}
+
+
+
+.sort-option-group {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.flight-table .react-bootstrap-table thead {
+    display: none;
+}
+
+.flight-table  {
+    background-color: #fbfbfb;
+}
+.sidebar-item{
+background-color: #fbfbfb;
+border: 1px solid #f1f1f1;
+box-shadow: 0px 0px 20px #cccccc57;
+margin-bottom: 30px;
+padding: 15px;
+}
+
+/* .detail-title{ */
+    /* background-color: #011638; */
+    /* color: #fbfbfb; */
+/* } */
+
+.detail-title h3{
+    background-color: #011638;
+    color: #fbfbfb;
+    border-radius: 5px;
+}
+
+.sort-option {
+    width: 33.33%;
+    padding: 8px;
+    /* background-color: rgba(59, 58, 58, 0.911); */
+    background-color: #011638;
+    border-color: #ffffff;
+    /* color: #222222; */
+    color: #fbfbfb;
+}
+
+.sort-option p {
+    color: #fbfbfb;
+    /* font-size: xx-small; */
+}
+
+.sort-option.active {
+    background-color: #048BA8 !important;
+}
+
+.sort-option.active p {
+    color: #fbfbfb;
+}
+
+.sort-option:hover {
+    background-color: #048BA8 !important;
+    border-color: #048BA8 !important;
+}
+
+.sort-option:hover p {
+    color: #fbfbfb;
+}
+
+
+/* .table_item .form-control {
+    padding: 10px !important;
+} */
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.flight-list-button {
+    z-index: 10;
+}
+
+.last-leg {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #015294;
+}
+
+.reset-expansion-style {
+    padding: 20px 0 !important;
+}
+
+.react-tagsinput{
+    border: 1px solid gray !important;
+    border-radius: 5px !important;
+}
+.react-tagsinput .react-tagsinput-tag{
+    border: none !important;
+}
+.react-tagsinput .react-tagsinput-input{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.swiper-banner .slider{
+    /* height: 300px !important; */
+    height: 70vh;
+}
+
+.btn-my-blue{
+    background-color:#0066a0;
+    width:100% ;
+    height: 7vh;
+    color:#fff
+}
+
+
+
+
+.navigation{
+    background-color: #17183B;
+    /* background: #372249d9; */
+}
+
+.nav.navbar-nav>li>a {
+    line-height: 3.5;
+    font-size: 14px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0;
+    color: #fbfbfb;
+    position: relative;
+    font-weight: 600;
+}
+
+.overlay-black-middle:after {
+    opacity: .5;
+}
+
+.black-middle:after {
+    background: #000;
+}
+.overlay-black-middle:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media(max-width: 480px){
+    .swiper-banner .slider{
+        height: 400px !important;
+        display: none;
+    }
+    .flight-info-card {
+        width: 100%;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        margin: 24px 8px;
+    }
+    .flight-info-name {
+        /* width: 108px; */
+        font-size: 16px;
+        /* text-align: left; */
+        overflow: hidden;
+    }
+    .sort-option p {
+        font-size: 8px;
+    }
+    .cell-content-center {
+        display: block;
+        text-align: center;
+        align-items: flex-start;
+        justify-content: space-around;
+        /* vertical-align: middle !important; */
+    }
+    .detail-panel{
+    width: 100%;
+    float: left;
+    padding: 20px 20px 0px 0px;
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 10px;
+    }
+}
+
+@media (max-width: 668px) {
+    .my-class-for-some-attractions {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 90%;
+        margin: 0 auto;
+        background: lavenderblush;
+    }
+    .flight-info-card {
+        width: 100%;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        margin: 24px 8px;
+    }
+    .flight-info-name {
+        /* width: 108px; */
+        font-size: 16px;
+        /* text-align: left; */
+        overflow: hidden;
+    }
+    .cell-content-center {
+        display: block;
+        text-align: center;
+        align-items: flex-start;
+        justify-content: space-around;
+        /* vertical-align: middle !important; */
+    }
+   
+}
+
+@media (min-width:670px) {
+    .my-class-for-some-attractions {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin: 0 auto;
+        background: lavenderblush;
+    }
+    .flight-info-card {
+        width: 100%;
+        /* display: flex; */
+        justify-content: space-between;
+        align-items: center;
+        margin: 24px 8px;
+    }
+    .flight-info-name {
+        /* width: 108px; */
+        font-size: 16px;
+        /* text-align: left; */
+        overflow: hidden;
+    }
+    
+  
+}
