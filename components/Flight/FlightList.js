@@ -28,6 +28,7 @@ export default function FlightList() {
   const [sort, setSort] = useState(2)
   const [stopFilteredResult, setStopFilteredResult] = useState([])
   const [airportFilteredResult, setAirportFilteredResult] = useState([])
+  // const [timeFilter, setTimeFilter] = useEffect([])
 
   const flightData = useSelector((state) => state.flightData)
   const { loading } = flightData
@@ -662,9 +663,10 @@ export default function FlightList() {
                             textAlign: 'center',
                             fontSize: 24,
                             fontWeight: 'bold',
+                            color:'#071c55',
                           }}
                         >
-                          No Results
+                          No Flight Found
                         </p>
                       )}
                     </div>
@@ -686,7 +688,7 @@ export default function FlightList() {
                                   type='checkbox'
                                   onChange={(e) => onFlightStopChange(e.target)}
                                 />{' '}
-                                Non Stop
+                                Direct Flight
                               </label>
                             </div>
                             <div className='checkbox'>
@@ -710,7 +712,7 @@ export default function FlightList() {
                                   type='checkbox'
                                   onChange={(e) => onFlightStopChange(e.target)}
                                 />{' '}
-                                1+ Stop
+                                2+ Stop
                               </label>
                             </div>
                           </form>
@@ -738,7 +740,7 @@ export default function FlightList() {
                                       id={airline?.Code}
                                       onChange={(e) => onAirlineCheck(e.target)}
                                     />{' '}
-                                    ({airline?.Code}) - {airlineName}
+                                     {airlineName} - ({airline?.Code})
                                   </label>
                                 </div>
                               </div>
@@ -750,12 +752,14 @@ export default function FlightList() {
                   </div>
                 </div>
               </div>
+              
             ) : (
               <p
                 style={{
                   textAlign: 'center',
                   fontSize: 24,
                   fontWeight: 'bold',
+                  color:'#071c55',
                 }}
               >
                 No Flight Data

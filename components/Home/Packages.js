@@ -20,100 +20,70 @@ const Packages = () => {
   }
   return (
     <>
+      <section name="packages" id="packages" className="popular-packages">
   
-
-    <section name='packages' id='packages' className='popular-packages'>
-
-    <div className='intro-area pd-top-50'>
-      <div className='container'>
-        <div className='row'>
-
-        <div class="col-lg-4">
-          <div class="single-intro wow fadeInUp animated" data-wow-duration="0.6s" data-wow-delay="0.1s" 
-          style={{visibility: "visible", animationDuration: "0.6s", animationDelay: "0.1s"}}>
-            <h4 class="intro-title"><span class="intro-count">01</span>
-            <a class="intro-cat" href="#">Travel</a>
-            </h4>
-            <p>Sponsorships are like unicorns or leprechauns, talked about often but they don’t actually exist. There is only dollars and cents, the ...</p>
-            </div>
-            </div>
-
-            <div class="col-lg-4">
-          <div class="single-intro wow fadeInUp animated" data-wow-duration="0.6s" data-wow-delay="0.1s" 
-          >
-            <h4 class="intro-title"><span class="intro-count">02</span>
-            <a class="intro-cat" href="#">Experience</a>
-            </h4>
-            <p>My response is usually harsh. Offended at the suggestion that a career that’s taken more than a decade to create could be...</p>
-            </div>
-            </div>
-
-            <div class="col-lg-4">
-          <div class="single-intro wow fadeInUp animated" data-wow-duration="0.6s" data-wow-delay="0.1s" 
-          >
-            <h4 class="intro-title"><span class="intro-count">03</span>
-            <a class="intro-cat" href="#">Relax</a>
-            </h4>
-            <p>I have always made a living to make movies, never the other way around. When I first started I washed in a seafood restaurant....</p>
-            </div>
-            </div>
-
-        </div>
-      </div>
-    </div>
-
-      <div className='container pd-top-70'>
-        <div className='section-title text-center'>
-          <h1>Special offers & Discounts</h1>
-          <p><b>Lorem Ipsum is simply dummy text the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</b></p>
-          {/* <div className='section-icon'>
+		<div className="section-title text-center">
+            <h1>Special offers & Discounts</h1>
+            <p>
+              <b>
+                Lorem Ipsum is simply dummy text the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s,
+              </b>
+            </p>
+            {/* <div className='section-icon'>
             <i className='flaticon-diamond'></i>
           </div> */}
-        </div>
-        <div className='row package-slider slider-button'>
-          {packages?.map((p, index) => (
-              <div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-							<img
-              src={p?.Pictures[0]}
-              alt='Image'
-              onClick={() => viewDetail(index)}
-              />
-							<div class="single-package-item-txt">
-							<h3>{p?.Name} 
-              <span class="pull-right"><i className='flaticon-time'></i> {p?.Features[0]}</span>
-              </h3>
-              <p>{p?.Info}</p>
-			
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>254 reviews</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn"
-                    type='button'
-                    onClick={() => viewDetail(index)}
-                    >
-											book now
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
 
-     {/* <!--packages start--> */}
-		{/* <section id="pack" class="packages">
+        <div className="container pd-top-70">
+          <div className="row package-slider slider-button">
+            {packages?.map((p, index) => (
+              <div class="col-md-4 col-sm-6">
+                <div class="single-package-item">
+                  <img
+                    src={p?.Pictures[0]}
+                    alt="Image"
+                    onClick={() => viewDetail(index)}
+                  />
+                  <div class="single-package-item-txt">
+                    <h3>
+                      {p?.Name}
+                      <span class="pull-right">
+                        <i className="flaticon-time"></i> {p?.Features[0]}
+                      </span>
+                    </h3>
+                    <p>{p?.Info}</p>
+
+                    <div class="packages-review">
+                      <p>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <span>254 reviews</span>
+                      </p>
+                    </div>
+                    <div class="about-btn">
+                      <button
+                        class="about-view packages-btn"
+                        type="button"
+                        onClick={() => viewDetail(index)}
+                      >
+                        book now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* <!--packages start--> */}
+      {/* <section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
 					<h2>
@@ -365,13 +335,9 @@ const Packages = () => {
 			</div>
 
 		</section> */}
-		{/* <!--packages end--> */}
-
-
-
-
+      {/* <!--packages end--> */}
     </>
-  )
+  );
 }
 
 export default Packages

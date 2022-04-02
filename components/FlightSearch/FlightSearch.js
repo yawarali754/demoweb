@@ -426,7 +426,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                           //     ? filterByCallback
                           //     : filterByFields
                           // }
-                          filterBy={['fs', 'city']}
+                          filterBy={['fs','city']}
                           paginate
                           placeholder='Flying from'
                           labelKey={(option) =>
@@ -460,7 +460,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                           //     ? filterByCallback
                           //     : filterByFields
                           // }
-                          filterBy={['fs', 'city']}
+                          filterBy={['fs','city']}
                           paginate
                           placeholder='Flying to'
                           labelKey={(option) =>
