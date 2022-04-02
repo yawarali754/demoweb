@@ -349,3 +349,84 @@ padding: 15px;
     
   
 }
+
+/* Packages CSS */
+
+
+.pd-top-100 {
+    padding-top: 100px;
+}
+
+.pd-top-70{
+    padding-top: 70px;
+}
+
+
+.single-intro .intro-title .intro-count {
+    font-family: var(--body-font);
+    color: #CFD3DE;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.single-intro .intro-title .intro-cat {
+    position: absolute;
+    background: #ffffff;
+    padding: 0 8px;
+    margin-left: -12px;
+    margin-top: 4px;
+    color: #071c55;
+    font-family: var(--heading-font);
+}
+/* new */
+
+
+.tp-video-area {
+    background-repeat: no-repeat;
+    background-position: 100% 0; }
+
+.tp-holiday-plan-area {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; }
+
+    .section-title {
+        margin-bottom: 63px; }
+        .section-title .title {
+          font-weight: 700;
+          margin-bottom: 0; }
+          .section-title .title span {
+            color: var(--main-color-one); }
+        .section-title p {
+          margin-bottom: 0;
+          margin-top: 18px; }
+        .section-title a {
+          margin-top: 32px; }
+        .section-title.style-two .title,
+        .section-title.style-two p,
+        .section-title.style-two a {
+          color: #ffffff; }
+        .section-title.section-title-left-border {
+          position: relative;
+          padding-left: 40px; }
+          .section-title.section-title-left-border:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--main-color-one); }
+        .section-title.section-title-right-border {
+          position: relative;
+          padding-right: 40px; }
+          .section-title.section-title-right-border:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--main-color-one); }

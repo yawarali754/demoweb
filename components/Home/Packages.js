@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { readPackageAction } from '../../redux/actions/packagesAction'
 import { useRouter } from 'next/router'
-// import "../Home/packages.css";
 
 const Packages = () => {
   const dispatch = useDispatch()
