@@ -28,12 +28,20 @@ export default function FlightList() {
   const [sort, setSort] = useState(2)
   const [stopFilteredResult, setStopFilteredResult] = useState([])
   const [airportFilteredResult, setAirportFilteredResult] = useState([])
-  // const [timeFilter, setTimeFilter] = useEffect([])
+  const [timeFilter, setTimeFilter] = useState([])
 
   const flightData = useSelector((state) => state.flightData)
   const { loading } = flightData
   const flightSearchData = flightData?.response?.data?.OTA_AirLowFareSearchRS
   const noFlightData = flightData?.response?.data
+
+
+
+
+
+  useEffect(() => {
+      console.warn(setTimeFilter)
+  }, [])
 
   useEffect(() => {
     if (noFlightData === 'Server responsed with Error 401') {
@@ -154,23 +162,23 @@ export default function FlightList() {
       }
     }
 
-    // setStopFilter(filtersArray)
+    setStopFilter(filtersArray)
 
-    // if (filtersArray?.length > 0) {
-    //   let arrayToFilter = filteredResult?.length > 0 ?
-    //     filteredResult
-    //     : flightSearchData?.PricedItineraries?.PricedItinerary
+    if (filtersArray?.length > 0) {
+      let arrayToFilter = filteredResult?.length > 0 ?
+        filteredResult
+        : flightSearchData?.PricedItineraries?.PricedItinerary
 
-    //     let filteredArray = []
+        let filteredArray = []
 
-    //     for(let item of filtersArray){
-    //       if(item === "NonStop"){
+        for(let item of filtersArray){
+          if(item === "NonStop"){
 
-    //       }
-    //       else if(item === "1Stop"){}
-    //       else if(item === "1+Stop"){}
-    //     }
-    // }
+          }
+          else if(item === "1Stop"){}
+          else if(item === "1+Stop"){}
+        }
+    }
   }
 
   const onAirlineCheck = (filter) => {
