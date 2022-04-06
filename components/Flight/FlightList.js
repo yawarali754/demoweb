@@ -28,7 +28,7 @@ export default function FlightList() {
   const [sort, setSort] = useState(2)
   const [stopFilteredResult, setStopFilteredResult] = useState([])
   const [airportFilteredResult, setAirportFilteredResult] = useState([])
-  const [timeFilter, setTimeFilter] = useState([])
+  // const [timeFilter, setTimeFilter] = useState([])
 
   const flightData = useSelector((state) => state.flightData)
   const { loading } = flightData
@@ -39,9 +39,9 @@ export default function FlightList() {
 
 
 
-  useEffect(() => {
-      console.warn(setTimeFilter)
-  }, [])
+  // useEffect(() => {
+  //     console.warn(setTimeFilter)
+  // }, [])
 
   useEffect(() => {
     if (noFlightData === 'Server responsed with Error 401') {
