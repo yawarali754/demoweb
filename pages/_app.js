@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css'
 // import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
 import ProtectedRoutes from '../public/js/ProtectedRoutes'
 // import '../public/css/style.css';
-// import '../components/Home/Ppackages.css';
 import '../styles/DropDown.css';
 
 

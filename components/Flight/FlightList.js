@@ -162,23 +162,23 @@ export default function FlightList() {
       }
     }
 
-    setStopFilter(filtersArray)
+    // setStopFilter(filtersArray)
 
-    if (filtersArray?.length > 0) {
-      let arrayToFilter = filteredResult?.length > 0 ?
-        filteredResult
-        : flightSearchData?.PricedItineraries?.PricedItinerary
+    // if (filtersArray?.length > 0) {
+    //   let arrayToFilter = filteredResult?.length > 0 ?
+    //     filteredResult
+    //     : flightSearchData?.PricedItineraries?.PricedItinerary
 
-        let filteredArray = []
+    //     let filteredArray = []
 
-        for(let item of filtersArray){
-          if(item === "NonStop"){
+    //     for(let item of filtersArray){
+    //       if(item === "NonStop"){
 
-          }
-          else if(item === "1Stop"){}
-          else if(item === "1+Stop"){}
-        }
-    }
+    //       }
+    //       else if(item === "1Stop"){}
+    //       else if(item === "1+Stop"){}
+    //     }
+    // }
   }
 
   const onAirlineCheck = (filter) => {
@@ -669,7 +669,7 @@ export default function FlightList() {
                         <p
                           style={{
                             textAlign: 'center',
-                            fontSize: 24,
+                            fontSize: 30,
                             fontWeight: 'bold',
                             color:'#071c55',
                           }}
