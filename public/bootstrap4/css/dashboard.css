@@ -5641,9 +5641,9 @@ h4 span.headline-detail {
         margin-bottom: 10px;
         margin-right: 25px;
     }
-    .dropdown-item {
+    /* .dropdown-item {
         padding: 26px 15px;
-    }
+    } */
     .dashboard-list-box .sort-by .sort-by-select {
         display: none;
     }

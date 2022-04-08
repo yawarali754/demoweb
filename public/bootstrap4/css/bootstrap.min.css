@@ -3474,7 +3474,7 @@ tbody.collapse.show {
 .dropdown-item {
     display: block;
     width: 100%;
-    padding: 0.25rem 1.5rem;
+    /* padding: 0.25rem 1.5rem; */
     clear: both;
     font-weight: 400;
     color: #212529;
@@ -3505,8 +3505,8 @@ tbody.collapse.show {
 }
 
 .dropdown-menu.show {
-    display:inline-block;
-    width: 100%;
+    display: block;
+    /* width: 100%; */
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
