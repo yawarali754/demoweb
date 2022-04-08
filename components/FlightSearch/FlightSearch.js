@@ -778,7 +778,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                 <div className='table_item'>
                   <div className='form-group dropdown'>
                     <label htmlFor='passengers'>Passengers</label>
-                    <div style={{ width: '100%' }} type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <div style={{ width: '100%' }} type="button" className="dropdown-toggle" data-toggle="dropdown">
                     <input
                         // type='text'
                         autoComplete='off'
@@ -809,7 +809,6 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                       >
                         {/* <option selected>Class</option> */}
                         <option selected value='ECONOMY'>Economy</option>
-                        <option value='Premium Economy'>Premium Economy</option>
                         <option value='FIRST'>First</option>
                         <option value='BUSINESS'>Business</option>
                       </select>

@@ -13,7 +13,7 @@ const Banner = () => {
             <div className='swiper-wrapper'>
               <div
                 className='swiper-slide'
-                style={{ backgroundImage: `url('https://triper.dexignlab.com/react/static/media/slide3.a89c8d0c.jpg')` }}
+                style={{ backgroundImage: `url('images/gallary/slider1.jpg')`, backgroundRepeat:"no-repeat",backgroundPosition: "center", backgroundSize: "cover cover"}}
               >
                 <div
                   className='swiper-content'
@@ -24,7 +24,7 @@ const Banner = () => {
               </div>
               <div
                 className='swiper-slide'
-                style={{ backgroundImage: `url('https://triper.dexignlab.com/react/static/media/slide1.a89b8f05.jpg')`,backgroundRepeat:"no-repeat" }}
+                style={{ backgroundImage: `url('images/gallary/slider2.jpg')`,backgroundRepeat:"no-repeat",backgroundPosition: "center", backgroundSize: "cover cover" }}
               >
                 <div
                   className='swiper-content'
@@ -35,8 +35,7 @@ const Banner = () => {
               </div>
               <div
                 className='swiper-slide'
-                style={{ backgroundImage: `url('https://triper.dexignlab.com/react/static/media/slide2.40595120.jpg')` }}
-              >
+                style={{ backgroundImage: `url('images/gallary/slider3.jpg')`, backgroundRepeat:"no-repeat",backgroundPosition: "center", backgroundSize: "cover cover" }}>
                 <div
                   className='swiper-content'
                   data-animation='animated fadeInUp'
