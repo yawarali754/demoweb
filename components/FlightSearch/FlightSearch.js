@@ -792,13 +792,13 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                           parseInt(infantPassengers)} Traveller, ${prefferedClass}`}/>
                       <i className='fa fa-user' style={{ top: '40px' }}></i>
                     </div>
-                    <div class="dropdown-menu">
+                    <div className="dropdown-menu">
                         
                     <div class="dropdown-item">
                         {/* Preferred Class */}
                   {/* <div className='table_item'> */}
                   <div className='form-group'>
-                    <label htmlFor='class'>Preferred Class</label>
+                    <span htmlFor='class'>Preferred Class</span>
                     <div style={{ width: '100%' }}>
                       <select
                         id='class'
@@ -813,7 +813,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                         <option value='FIRST'>First</option>
                         <option value='BUSINESS'>Business</option>
                       </select>
-                      <i class='flaticon-box' style={{ top: '30px' }}></i>
+                      <i class='flaticon-box' style={{ top: '22px' }}></i>
                     </div>
                   </div>
                   {/* </div> */}
@@ -825,7 +825,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                     <Form onSubmit={handleModalSubmit}>
                       <div class="dropdown-item">
                       <Form.Group controlId='formBasicEmail'>
-                            <div className="ccontainer">
+                            {/* <div className="ccontainer"> */}
                             <span>Adult(s)</span>
                             <div className="qquantity">
                             <a className="qquantity__minus" title="Decrement" ><span>-</span></a>
@@ -839,7 +839,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             }/>
                             <a className="qquantity__plus" title="Increment"><span>+</span></a>
                             </div>
-                            </div>
+                            {/* </div> */}
                             </Form.Group>
                       </div>
 

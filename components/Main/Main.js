@@ -239,7 +239,7 @@ export default function Main() {
                 }}
               >
                 <div className="thumb">
-                  <img src="/images/gallary/c1.png" alt="list" />
+                  <img src="/images/gallary/c1.jpg" alt="list" />
                 </div>
                 <div className="details">
                   <p className="location">
@@ -269,7 +269,7 @@ export default function Main() {
                 }}
               >
                 <div className="thumb">
-                  <img src="/images/gallary/c2.png" alt="list" />
+                  <img src="/images/gallary/c2.jpg" alt="list" />
                 </div>
                 <div className="details">
                   <p className="location">
@@ -299,7 +299,7 @@ export default function Main() {
                 }}
               >
                 <div className="thumb">
-                  <img src="/images/gallary/c3.png" alt="list" />
+                  <img src="/images/gallary/c3.jpg" alt="list" />
                 </div>
                 <div className="details">
                   <p className="location">
@@ -329,7 +329,7 @@ export default function Main() {
                 }}
               >
                 <div className="thumb">
-                  <img src="/images/gallary/c4.png" alt="list" />
+                  <img src="/images/gallary/c1.jpg" alt="list" />
                 </div>
                 <div className="details">
                   <p className="location">

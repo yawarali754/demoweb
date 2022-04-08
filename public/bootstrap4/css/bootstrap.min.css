@@ -3379,10 +3379,10 @@ tbody.collapse.show {
     border-radius: 0.25rem;
 }
 
-.dropup .dropdown-menu {
+/* .dropup .dropdown-menu {
     margin-top: 0;
     margin-bottom: 0.125rem;
-}
+} */
 
 .dropup .dropdown-toggle::after {
     display: inline-block;
@@ -3505,7 +3505,11 @@ tbody.collapse.show {
 }
 
 .dropdown-menu.show {
-    display: block;
+    display:inline-block;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .dropdown-header {

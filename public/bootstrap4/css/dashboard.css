@@ -3687,7 +3687,7 @@ a.dashboard-responsive-nav-trigger {
 }
 
 .dropdown-item {
-    padding: 26px;
+    padding: 5px;
     border-left: 1px solid #eee;
 }
 
@@ -3695,6 +3695,14 @@ a.dashboard-responsive-nav-trigger {
     display: none;
 }
 
+.dropdown-menu{
+    position: absolute;
+    transform: translate3d(0px, -450px, 0px);
+    top: 510px;
+    left: 0px;
+    will-change: transform;
+    width: 100%;
+}
 
 /* .dropdown-menu {
     margin: 0;
