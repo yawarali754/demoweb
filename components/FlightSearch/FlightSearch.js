@@ -11,7 +11,8 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { formatDate } from '../../public/js/utils'
 import {Input} from '@material-ui/core';
-
+import { incNumber } from '../../redux/actions/flightActions'
+import { decNumber } from '../../redux/actions/flightActions'
 
 const airports = require('iata-airports/active_airports.json')
 const airlines = require('iata-airlines/active_airlines.json')
@@ -36,8 +37,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
     myData?.departureDate || new Date()
   )
   const [adultPassengers, setAdultPassengers] = useState(
-    myData?.adultPassengers || 1
-  )
+myData?.adultPassengers || 1)
   const [childPassengers, setChildrens] = useState(myData?.childPassengers || 0)
   const [youthPassengers, setYouth] = useState(myData?.youthPassengers || 0)
   const [infantPassengers, setInfant] = useState(myData?.infantPassengers || 0)
@@ -47,6 +47,11 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
   const [directFlight, setDirectFlight] = useState(
     myData?.directFlight || false
   )
+
+  const [flexi, setFlexi] = useState(
+    myData?.directFlight || false
+  )
+
   const [filterBy, setFilterBy] = useState('callback')
   const filterByCallback = (option, props) =>
     option.fs.toLowerCase().indexOf(props.text.toLowerCase()) !== -1
@@ -170,6 +175,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
       multiFlightSegmentForm,
       tripType,
       directFlight,
+      flexi,
     }
     setErrors(validate(formData))
     console.log("formData", formData)
@@ -404,7 +410,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                 className='form-check-input'
                 type='checkbox'
                 id='checkbox1'
-                // onClick={(e) => setDirectFlight(e.target.checked)}
+                onClick={(e) => setFlexi(e.target.checked)}
               />
               <label className='form-check-label' for='checkbox1'>
                Flexi (+/- 3 days)
@@ -827,7 +833,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             {/* <div className="ccontainer"> */}
                             <span>Adult(s)</span>
                             <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" ><span>-</span></a>
+                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
                             <input type='number' className="qquantity__input" 
                             min='0'
                             max='100'
@@ -836,7 +842,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             onChange={(e) =>
                             setAdultPassengers(parseInt(e.target.value))
                             }/>
-                            <a className="qquantity__plus" title="Increment"><span>+</span></a>
+                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>
                             </div>
                             {/* </div> */}
                             </Form.Group>
@@ -847,7 +853,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             <div className="ccontainer">
                             <span>Child(ren)</span>
                             <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" ><span>-</span></a>
+                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
                             <input type='number' className="qquantity__input" 
                             min='0'
                             max='100'
@@ -856,7 +862,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             onChange={(e) =>
                               setChildrens(parseInt(e.target.value))
                             }/>
-                            <a className="qquantity__plus" title="Increment"><span>+</span></a>
+                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>
                             </div>
                             </div>
                             </Form.Group>
@@ -867,7 +873,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             <div className="ccontainer">
                             <span>Youth(s)</span>
                             <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" ><span>-</span></a>
+                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
                             <input type='number' className="qquantity__input" 
                             min='0'
                             max='100'
@@ -876,7 +882,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             onChange={(e) =>
                               setYouth(parseInt(e.target.value))
                             }/>
-                            <a className="qquantity__plus" title="Increment"><span>+</span></a>
+                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>
                             </div>
                             </div>
                             </Form.Group>
@@ -887,7 +893,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             <div className="ccontainer">
                             <span>Infant(s)</span>
                             <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" ><span>-</span></a>
+                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
                             <input type='number' className="qquantity__input" 
                             min='0'
                             max='100'
@@ -896,7 +902,7 @@ const FlightSearch = ({ selectedOfferFromCity, selectedOfferToCity }) => {
                             onChange={(e) =>
                               setInfant(parseInt(e.target.value))
                             }/>
-                            <a className="qquantity__plus" title="Increment"><span>+</span></a>   
+                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>   
                             </div>
                             </div>
                             </Form.Group>

@@ -45,6 +45,10 @@ export const fligthSearch = (state = {}, action) => {
       return { ...state, savedBookingRec: action, loading: false }
     case types.GET_SAVE_BOOKING_FAILED:
       return { ...state, error: action, loading: false }
+      case types.INCREMENT: 
+      return (state + action.payload);
+        case types.DECREMENT: 
+        return(state - action.payload);
     default:
       return state
   }
