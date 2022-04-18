@@ -22,7 +22,7 @@ const Packages = () => {
       <section name="packages" id="packages" className="popular-packages">
   
 		<div className="section-title text-center">
-            <h1>Special offers & Discounts</h1>
+            <h1 className='special-offers'>Special offers & Discounts</h1>
             <p>
               <b>
                 Lorem Ipsum is simply dummy text the printing and typesetting

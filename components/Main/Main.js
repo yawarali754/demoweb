@@ -29,9 +29,13 @@ export default function Main() {
 
   return (
     <div>
+      <div>
+        
+      </div>
       {/* <div className='search-box'> */}
       <Banner />
       {/* </div> */}
+
       <div className="search-box">
         <FlightSearch
           selectedOfferFromCity={flyingFromCity}
@@ -250,7 +254,7 @@ export default function Main() {
                   <p className="content">7 Days Tour on 2 person</p>
                   <div className="tp-price-meta">
                     <h2>
-                      620 <small>$</small>
+                      620 <small>£</small>
                     </h2>
                   </div>
                 </div>
@@ -280,7 +284,7 @@ export default function Main() {
                   <p className="content">4 days 2 person</p>
                   <div className="tp-price-meta">
                     <h2>
-                      780 <small>$</small>
+                      780 <small>£</small>
                     </h2>
                   </div>
                 </div>
@@ -310,7 +314,7 @@ export default function Main() {
                   <p className="content">4 days 4 person</p>
                   <div className="tp-price-meta">
                     <h2>
-                      850 <small>$</small>
+                      850 <small>£</small>
                     </h2>
                   </div>
                 </div>
@@ -340,7 +344,7 @@ export default function Main() {
                   <p className="content">3 days 2 person</p>
                   <div className="tp-price-meta">
                     <h2>
-                      620 <small>$</small>
+                      620 <small>£</small>
                     </h2>
                   </div>
                 </div>

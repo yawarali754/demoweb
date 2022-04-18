@@ -13,6 +13,7 @@ import { formatDate } from '../../public/js/utils'
 import {Input} from '@material-ui/core';
 import { incNumber } from '../../redux/actions/flightActions'
 import { decNumber } from '../../redux/actions/flightActions'
+import  Select  from 'react-select';
 
 const airports = require('iata-airports/active_airports.json')
 const airlines = require('iata-airlines/active_airlines.json')
@@ -368,6 +369,9 @@ myData?.adultPassengers || 1)
     handleClose()
   }
   const filterByFields = ['fs', 'city']
+
+const [status, setStatus] = useState(false);
+
   return (
   <>
      <div className='container'>
@@ -449,7 +453,7 @@ myData?.adultPassengers || 1)
                           onFocus ={() => setMyFocusState(true)}
                         />
                         <p className="text-danger">{errors.flyingFrom}</p>
-                        <i class='flaticon-maps-and-flags'></i>
+                        <i className='flaticon-maps-and-flags'></i>
                       </div>
                     </div>
                   </div>
@@ -784,7 +788,7 @@ myData?.adultPassengers || 1)
                 <div className='table_item'>
                   <div className='form-group dropdown'>
                     <label htmlFor='passengers'>Passengers</label>
-                    <div style={{ width: '100%' }} type="button" className="dropdown-toggle" data-toggle="dropdown">
+                    <div style={{ width: '100%' }} onClick={()=>setStatus(!status)} aria-haspopup="true" aria-expanded="false">
                     <input
                         // type='text'
                         autoComplete='off'
@@ -798,10 +802,11 @@ myData?.adultPassengers || 1)
                           parseInt(infantPassengers)} Traveller, ${prefferedClass}`}/>
                       <i className='fa fa-user' style={{ top: '40px' }}></i>
                     </div>
-                    <div className="dropdown-menu">
-                        
+                    { status?
+                    <div className='adult-class-dropdown'>
+      
                     <div class="dropdown-item">
-                        {/* Preferred Class */}
+                  {/* Preferred Class */}
                   {/* <div className='table_item'> */}
                   <div className='form-group'>
                     <span htmlFor='class'>Preferred Class</span>
@@ -822,10 +827,8 @@ myData?.adultPassengers || 1)
                     </div>
                   </div>
                   {/* </div> */}
-    {/* Preferred Class */}
-
+                  {/* Preferred Class */}
                     </div>
-
                     <>
                     <Form onSubmit={handleModalSubmit}>
                       <div class="dropdown-item">
@@ -908,14 +911,16 @@ myData?.adultPassengers || 1)
                             </Form.Group>
                       </div>
 
-                      {/* <div class="dropdown-item">
-                      <Button className='btn btn-danger btn-sm' style={{marginRight:"10px"}} onClick={handleClose}>Close Modal</Button>
-                      <Button className='btn btn-primery btn-sm'  onClick={handleModalSubmit}>Submit</Button>
-                      </div> */}
+                      <div class="dropdown-item">
+                      {/* <Button className='btn btn-danger btn-sm' style={{marginRight:"10px"}} onClick={handleClose}>Close Modal</Button> */}
+                      <Button className='btn btn-primery btn-sm w-100' onClick={()=>setStatus(!status)}>Submit</Button>
+                      </div>
                        
                   </Form>
                   </>
                   </div>
+                  :null
+                  }
                   </div>
                 </div>
               </div>
@@ -944,7 +949,7 @@ myData?.adultPassengers || 1)
                   </div>
                 </div>
               </div>
-              <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+              {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
                     <label htmlFor='class'>Cabin</label>
@@ -965,7 +970,41 @@ myData?.adultPassengers || 1)
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
+
+                     
+
+{/* yawar */}
+
+{/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+                <div className='table_item'>
+                  <div className='form-group dropdown'>
+                    <label htmlFor='passengers'>Passengers</label>
+                    <div style={{ width: '100%' }} onClick={()=>setStatus(!status)}>
+                    <input
+                        // type='text'
+                        autoComplete='off'
+                        id='passengers'
+                        style={{ width: '100%',color:'black' }}
+                        className='form-control'
+                        placeholder='passengers'
+                        value={`${parseInt(adultPassengers) +
+                          parseInt(youthPassengers) +
+                          parseInt(childPassengers) +
+                          parseInt(infantPassengers)} Traveller, ${prefferedClass}`}/>
+                      <i className='fa fa-user' style={{ top: '40px' }}></i>
+                    </div>
+                    { status?
+                    <div >
+                        <h1>Hello</h1>
+                   </div>
+                  :null
+                  }
+                  </div>
+                </div>
+              </div> */}
+
+{/* yawar */}
               <div className='col-md-2 col-sm-6 srch-mrgn-btm'>
                 <div className='table_item'>
                 <div className='form-group'>

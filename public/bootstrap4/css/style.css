@@ -367,6 +367,12 @@ label {
     z-index: 1;
 }
 
+.special-offers{
+    color: #071c55;
+    font-family:'Playfair Display';
+    font-weight: 700;
+}
+
 .section-title h2 {
     position: relative;
     margin-bottom: 10px;
@@ -8971,8 +8977,11 @@ body>div {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
-    background: #212121;
+    min-height: 60vh;
+    /* background: #212121; */
+    background: url(../../images/gallary/get.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     font-family: sans-serif;
 }
 
@@ -9853,9 +9862,9 @@ body>div {
         margin-right: 40px;
     }
     .tp-price-meta h2 small {
-        font-size: 12px !important;
+        font-size: 35px !important;
         right: -9px;
-        font-weight: 300;
+        font-weight: 700;
         /* position: absolute; */
         margin-top: 7px;
         position: absolute;
@@ -12639,4 +12648,88 @@ body>div {
         margin-top: -277px;
     }*/
 
-    
+
+    /* .wrapper{
+display: flex;
+padding-top: 50px;
+justify-content: center;
+    }
+
+.collapsible{
+    max-width: 450px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapsible input{
+    display: none;
+}
+
+.collapsible label{
+    position: relative;
+    font-weight: 600;
+    background: #fff ;
+    box-shadow: 0 5pc 11px 0 rgba(0, 0, 0,.1), 0 4px 11px 0 rgba(0, 0, 0, .08);
+    color: #1c1c6b;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.collapsible label::after{
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    transition: all 0.3s ease;
+}
+
+.collapsible input:checked + label:after{
+    transform: rotate(90deg);
+}
+
+.collapsible-text{
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    position: relative;
+    top: -100%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapsible input:checked ~ .collapsible-text {
+    max-height: 300px;
+    padding-bottom: 25px;
+    background: #fff;
+    box-shadow: 0 5pc 11px 0 rgba(0, 0, 0,.1), 0 4px 11px 0 rgba(0, 0, 0, .08);
+    opacity: 1;
+    top: 0;
+}
+
+.collapsible-text h2{
+    margin-bottom: 10px;
+    padding: 15px 15px 0;
+    color: #1c1c6b;
+}  
+
+.collapsible-text p{
+    padding-left: 15px;
+    padding-right: 15px;
+} */
+
+.adult-class-dropdown{
+    width:100%; 
+    margin-top: 5px;
+    position:relative; 
+    position:absolute; 
+    background:#fff; 
+    border-radius:5px; 
+    box-shadow:0 2px 3px 0 #999;}

@@ -23,6 +23,14 @@ class MyDocument extends Document {
             rel='stylesheet'
             type='text/css'
           />
+
+            <link
+            // href='https://tezeract-ai.github.io/yatra-travel-template/css/bootstrap.min.css'
+            href='bootstrap4/js/Custom-dropdown.js'
+            rel='stylesheet'
+            type='text/css'
+          />
+
           <link
             // href='https://tezeract-ai.github.io/yatra-travel-template/css/style.css'
             href='bootstrap4/css/style.css'

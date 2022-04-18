@@ -126,7 +126,7 @@ const Deals = ({ setflyingFromCity, setflyingToCity }) => {
         </div>
       </div> */}
       
-      {/* 
+      
       <div id="jarallax-container-1" style={{
         position: "fixed", inset: "0px", width: "100%", height: "1059.25px", maxWidth: "none", maxHeight: "none",
         margin: "-162.125px 0px 0px", zIndex: "-1",
@@ -139,9 +139,9 @@ const Deals = ({ setflyingFromCity, setflyingToCity }) => {
           display: "none"
         }}>
         </div>
-        <iframe id="VideoWorker-0" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/JPe2mwq96cw?autohide=1&amp;rel=0&amp;autoplay=0&amp;playsinline=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;controls=0&amp;showinfo=0&amp;disablekb=1&amp;widget_referrer=http%3A%2F%2Fpreview.themeforest.net%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fmax-themes.net&amp;widgetid=1" style={{ position: "fixed", inset: "0px", width: "888px", height: "899.5px", maxWidth: "none", maxHeight: "none", margin: "-82.25px 0px 0px", zIndex: "-1", transform: "translate3d(0px, -42.0766px, 0px)" }}></iframe></div> */}
+        <iframe id="VideoWorker-0" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/JPe2mwq96cw?autohide=1&amp;rel=0&amp;autoplay=0&amp;playsinline=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;controls=0&amp;showinfo=0&amp;disablekb=1&amp;widget_referrer=http%3A%2F%2Fpreview.themeforest.net%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fmax-themes.net&amp;widgetid=1" style={{ position: "fixed", inset: "0px", width: "888px", height: "899.5px", maxWidth: "none", maxHeight: "none", margin: "-82.25px 0px 0px", zIndex: "-1", transform: "translate3d(0px, -42.0766px, 0px)" }}></iframe></div>
       <section name='deals' id='deals' className='bucket-list'>
-        <div className='bucket-icons'>
+        {/* <div className='bucket-icons'>
           <div className='container'>
             <div className='section-title text-center'>
               <h2>Top Deals</h2>
@@ -150,7 +150,7 @@ const Deals = ({ setflyingFromCity, setflyingToCity }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className='my-sec-card-body'>
 
@@ -180,22 +180,19 @@ const Deals = ({ setflyingFromCity, setflyingToCity }) => {
                         alt="images" />
                     </div>
                     <div className="details">
-                      <h2>{o?.Name}<br /><span>{o?.Price}</span></h2>
+                      <h2 style={{color:"#071c55",fontFamily:"'Playfair Display'"}}>{o?.Name}<br /><span>{o?.Price}</span></h2>
                     </div>
                   </div>
                 ))
               )}
 
-
           </div>
         </div>
+
         <div class="d-flex justify-content-center">
           <div className='col-md-3 col-sm-6'>
             <div className='table_item'>
               <div className='search'>
-                <label htmlFor='button' style={{ visibility: 'hidden' }}>
-                  a
-                </label>
                 <button
                   id='button1'
                   className='btn-blue'
@@ -210,6 +207,7 @@ const Deals = ({ setflyingFromCity, setflyingToCity }) => {
             </div>
           </div>
         </div>
+        
       </section>
     </>
   )

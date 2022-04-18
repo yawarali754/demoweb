@@ -116,14 +116,14 @@ export const getSavedBookingFailed = (error) => {
 
 export const incNumber = () => {
   return {
-    type: "INCREMENT",
+    type: INCREMENT,
     payload: 1,
   };
 };
 
 export const decNumber = () => {
   return {
-    type: "DECREMENT",
+    type: DECREMENT,
     payload: -1,
   };
 };
