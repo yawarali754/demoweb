@@ -12726,12 +12726,12 @@ justify-content: center;
 } */
 
 .adult-class-dropdown{
-    width:100%; 
+    /* width:100%;  */
     margin-top: 5px;
     /* position:relative;  */
     position:absolute; 
     background:#fff; 
     border-radius:5px; 
     box-shadow:0 2px 3px 0 #999;
-    z-index: 1;
+    z-index: 111;
 }
