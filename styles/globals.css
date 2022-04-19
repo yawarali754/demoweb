@@ -680,7 +680,7 @@ a {
         background: #fff;
         box-shadow: none;
         height: 100vh;
-        left: 0;
+        left: auto;
         margin: 0;
         overflow-y: auto;
         padding: 0 10px 10px;
@@ -735,8 +735,8 @@ a {
 }
 
 .more-option-drop .more-option-links li.active a, .more-option-drop .more-option-links li a:hover {
-    background: #f6ac31;
-    border: 1px solid #f6ac31;
+    background: #191e27;
+    border: 1px solid #191e27;
     color: #fff
 }
 
@@ -7000,7 +7000,7 @@ a {
         background: #fff;
         box-shadow: none;
         height: 100vh;
-        left: 0;
+        left: auto;
         /* margin: 0; */
         overflow-y: auto;
         padding: 0 10px 10px;
@@ -7055,8 +7055,8 @@ a {
 }
 
 .more-option-drop .more-option-links li.active a, .more-option-drop .more-option-links li a:hover {
-    background: #f6ac31;
-    border: 1px solid #f6ac31;
+    background: #191e27;
+    border: 1px solid #191e27;
     color: #fff
 }
 

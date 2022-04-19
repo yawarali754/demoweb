@@ -804,12 +804,37 @@ const [status, setStatus] = useState(false);
                 </div>
               </div> */}
 
+                
+
                 <div
                   className="col-md-2 col-sm-6 srch-mrgn-btm"
                   style={
                     MyFocusState ? { display: "block" } : { display: "none" }
                   }
                 >
+                  <div className="table_item">
+                    <div className="form-group typeahead-dropdown">
+                      <label htmlFor="airline">Airline</label>
+                      <Typeahead
+                        id="airline"
+                        onPaginate={(e) => console.log("Results paginated")}
+                        options={airlines}
+                        filterBy={
+                          filterBy === "callback"
+                            ? filterByCallback
+                            : filterByFields
+                        }
+                        paginate
+                        placeholder="Airline"
+                        labelKey={(option) => `${option.name}`}
+                        onChange={(e) => setAirline(e[0]?.fs ? e[0]?.fs : "")}
+                      />
+                      <i class="fa fa-plane" style={{ top: "40px" }}></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-6 srch-mrgn-btm" style={ MyFocusState ? { display: "block" } : { display: "none" }}>
                   <div className="table_item">
                     <div className="form-group dropdown">
                       <label htmlFor="passengers">Passengers</label>
@@ -850,13 +875,13 @@ const [status, setStatus] = useState(false);
                                           <span class="title">Class</span>
                                           <ul class="more-option-links">
                                             <li id="economy" class="active">
-                                              <a href="javascript:void(0);">Economy</a>
+                                              <a href="#">Economy</a>
                                             </li>
                                             <li id="business">
-                                              <a href="javascript:void(0);">Business</a>
+                                              <a href="#">Business</a>
                                             </li>
                                             <li id="first">
-                                              <a href="javascript:void(0);">First</a>
+                                              <a href="#">First</a>
                                             </li>
                                           </ul>
                                         </div>
@@ -869,13 +894,13 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">12+ years</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="javascript:void(0)" class="low-btn">
+                                                <a href="" class="low-btn">
                                                   --
                                                 </a>
                                                 <span id="adult" class="number">
                                                   1
                                                 </span>
-                                                <a href="javascript:void(0)" class="high-btn">
+                                                <a href="" class="high-btn">
                                                   +
                                                 </a>
                                               </div>
@@ -886,13 +911,13 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">12+ years</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="javascript:void(0)" class="low-btn">
+                                                <a href="" class="low-btn">
                                                   --
                                                 </a>
                                                 <span id="adult" class="number">
                                                   0
                                                 </span>
-                                                <a href="javascript:void(0)" class="high-btn">
+                                                <a href="" class="high-btn">
                                                   +
                                                 </a>
                                               </div>
@@ -903,13 +928,13 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">2 - 11 years</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="javascript:void(0)" class="low-btn">
+                                                <a href="" class="low-btn">
                                                   --
                                                 </a>
                                                 <span id="children" class="number">
                                                   0
                                                 </span>
-                                                <a href="javascript:void(0)" class="high-btn">
+                                                <a href="" class="high-btn">
                                                   +
                                                 </a>
                                               </div>
@@ -920,13 +945,13 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">0 - 23 Month</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="javascript:void(0)" class="low-btn">
+                                                <a href="" class="low-btn">
                                                   --
                                                 </a>
                                                 <span id="infant" class="number">
                                                   0
                                                 </span>
-                                                <a href="javascript:void(0)" class="high-btn">
+                                                <a href="" class="high-btn">
                                                   +
                                                 </a>
                                               </div>
@@ -937,10 +962,10 @@ const [status, setStatus] = useState(false);
                                           <span class="title">Nonstop Flights</span>
                                           <ul class="more-option-links">
                                             <li id="yes" class="">
-                                              <a href="javascript:void(0);">yes</a>
+                                              <a href="">yes</a>
                                             </li>
                                             <li id="no" class="active">
-                                              <a href="javascript:void(0);">no</a>
+                                              <a href="">no</a>
                                             </li>
                                           </ul>
                                         </div>
@@ -951,33 +976,8 @@ const [status, setStatus] = useState(false);
                   </div>
                 </div>
 
-                <div
-                  className="col-md-2 col-sm-6 srch-mrgn-btm"
-                  style={
-                    MyFocusState ? { display: "block" } : { display: "none" }
-                  }
-                >
-                  <div className="table_item">
-                    <div className="form-group typeahead-dropdown">
-                      <label htmlFor="airline">Airline</label>
-                      <Typeahead
-                        id="airline"
-                        onPaginate={(e) => console.log("Results paginated")}
-                        options={airlines}
-                        filterBy={
-                          filterBy === "callback"
-                            ? filterByCallback
-                            : filterByFields
-                        }
-                        paginate
-                        placeholder="Airline"
-                        labelKey={(option) => `${option.name}`}
-                        onChange={(e) => setAirline(e[0]?.fs ? e[0]?.fs : "")}
-                      />
-                      <i class="fa fa-plane" style={{ top: "40px" }}></i>
-                    </div>
-                  </div>
-                </div>
+
+
                 {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
