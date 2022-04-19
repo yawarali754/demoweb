@@ -373,315 +373,335 @@ myData?.adultPassengers || 1)
 const [status, setStatus] = useState(false);
 
   return (
-  <>
-     <div className='container'>
-      <div className='search-outer'>
-        <div className='search-content'>
-          <form onSubmit={handleFlightSearch}>
-          <div className='btn-group btn-group-sm '>
-            <button type='button' className='btn btn-info'
-             name='tripType'
-             id='RoundTrip'
-             value='roundTrip'
-             checked={tripType === 'roundTrip'}
-             onClick={(e) => {
-               setTripType(e.target.value)
-             }}>Round Trip</button>
-            <button type='button' className='btn btn-info '
-            name='tripType'
-            id='OneWay'
-            value='oneWay'
-            onClick={(e) => setTripType(e.target.value)}>One Way</button>
-            <button type='button' className='btn btn-info '
-            name='tripType'
-            id='multiCity'
-            value='multiCity'
-            onClick={(e) => setTripType(e.target.value)}>Multi City</button>
-           </div>
-           <div className='form-check form-check-inline pl-2'>
-              <input
-                className='form-check-input'
-                type='checkbox'
-                id='checkbox1'
-                onClick={(e) => setDirectFlight(e.target.checked)}
-              />
-              <label className='form-check-label' for='checkbox1'>
-                Direct Flights Only
-              </label>
-            </div>
-            <div className='form-check form-check-inline pl-2'>
-              <input
-                className='form-check-input'
-                type='checkbox'
-                id='checkbox1'
-                onClick={(e) => setFlexi(e.target.checked)}
-              />
-              <label className='form-check-label' for='checkbox1'>
-               Flexi (+/- 3 days)
-              </label>
-            </div>
-            <div className='row my-row'>
-              {tripType !== 'multiCity' ? (
-                <>
-                  <div className='col-md-2 col-sm-12'>
-                    <div className='table_item'>
-                      <div className='form-group typeahead-dropdown'>
-                        <label htmlFor='departure'>Flying From</label>
-                        <Typeahead
-                          id='departure'
-                          onPaginate={(e) => console.log('Results paginated')}
-                          options={airports}
-                          // filterBy={
-                          //   filterBy === 'callback'
-                          //     ? filterByCallback
-                          //     : filterByFields
-                          // }
-                          filterBy={['fs','city']}
-                          paginate
-                          placeholder='Flying from'
-                          labelKey={(option) =>
-                            `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
-                          }
-                          // labelKey={'city'}
-                          onChange={(e) => {
-                            console.log("e", e)
-                            setErrors({ ...errors, flyingFrom: '' })
-                            setFlyingFrom(e[0]?.fs ? e[0]?.fs : '')
-                          }
-                          }
-                          defaultInputValue={flyingFrom}
-                          onFocus ={() => setMyFocusState(true)}
-                        />
-                        <p className="text-danger">{errors.flyingFrom}</p>
-                        <i className='flaticon-maps-and-flags'></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='col-md-2 col-sm-12 srch-mrgn-btm'>
-                    <div className='table_item'>
-                      <div className='form-group typeahead-dropdown'>
-                        <label htmlFor='arrival'>Flying To</label>
-                        <Typeahead
-                          id='arrival'
-                          onPaginate={(e) => console.log('Results paginated')}
-                          options={airports}
-                          // filterBy={
-                          //   filterBy === 'callback'
-                          //     ? filterByCallback
-                          //     : filterByFields
-                          // }
-                          filterBy={['fs','city']}
-                          paginate
-                          placeholder='Flying to'
-                          labelKey={(option) =>
-                            `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
-                          }
-                          onChange={(e) => {
-                            setErrors({ ...errors, flyingTo: '' })
-                            setFlyingTo(e[0]?.fs ? e[0]?.fs : '')
-                          }
-                          
-                          }
-                          onFocus ={() => setMyFocusState(true)}
-                          defaultInputValue={flyingTo}
-                        />
-                        <p className="text-danger">{errors.flyingTo}</p>
-                        <i class='flaticon-maps-and-flags'></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='col-md-2 col-sm-6 srch-mrgn-btm'>
-                    <div className='table_item'>
-                      <div className='form-group'>
-                        <div className='input-group date'>
-                          <label htmlFor='deparure-date'>Departure</label>
-                          <DatePicker
-                            style={{ width: '100%' }}
-                            autoComplete='off'
-                            className='form-control '
-                            placeholderText='Departure Date'
-                            id='deparure-date'
-                            selected={departureDate}
-                            minDate={new Date()}
+    <>
+      <div className="container">
+        <div className="search-outer">
+          <div className="search-content">
+            <form onSubmit={handleFlightSearch}>
+              <div className="btn-group btn-group-sm ">
+                <button
+                  type="button"
+                  className="btn btn-info"
+                  name="tripType"
+                  id="RoundTrip"
+                  value="roundTrip"
+                  checked={tripType === "roundTrip"}
+                  onClick={(e) => {
+                    setTripType(e.target.value);
+                  }}
+                >
+                  Round Trip
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-info "
+                  name="tripType"
+                  id="OneWay"
+                  value="oneWay"
+                  onClick={(e) => setTripType(e.target.value)}
+                >
+                  One Way
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-info "
+                  name="tripType"
+                  id="multiCity"
+                  value="multiCity"
+                  onClick={(e) => setTripType(e.target.value)}
+                >
+                  Multi City
+                </button>
+              </div>
+              <div className="form-check form-check-inline pl-2">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="checkbox1"
+                  onClick={(e) => setDirectFlight(e.target.checked)}
+                />
+                <label className="form-check-label" for="checkbox1">
+                  Direct Flights Only
+                </label>
+              </div>
+              <div className="form-check form-check-inline pl-2">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="checkbox1"
+                  onClick={(e) => setFlexi(e.target.checked)}
+                />
+                <label className="form-check-label" for="checkbox1">
+                  Flexi (+/- 3 days)
+                </label>
+              </div>
+              <div className="row my-row">
+                {tripType !== "multiCity" ? (
+                  <>
+                    <div className="col-md-2 col-sm-12">
+                      <div className="table_item">
+                        <div className="form-group typeahead-dropdown">
+                          <label htmlFor="departure">Flying From</label>
+                          <Typeahead
+                            id="departure"
+                            onPaginate={(e) => console.log("Results paginated")}
+                            options={airports}
+                            // filterBy={
+                            //   filterBy === 'callback'
+                            //     ? filterByCallback
+                            //     : filterByFields
+                            // }
+                            filterBy={["fs", "city"]}
+                            paginate
+                            placeholder="Flying from"
+                            labelKey={(option) =>
+                              `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
+                            }
+                            // labelKey={'city'}
                             onChange={(e) => {
-                              e.setSeconds(0)
-                              e.setMilliseconds(0)
-                              setDepartureDate(e)
-                              setReturnDate(oneWeek(e))
+                              console.log("e", e);
+                              setErrors({ ...errors, flyingFrom: "" });
+                              setFlyingFrom(e[0]?.fs ? e[0]?.fs : "");
                             }}
+                            defaultInputValue={flyingFrom}
+                            onFocus={() => setMyFocusState(true)}
                           />
-                          <p className="text-danger">{errors.departureDate}</p>
+                          <p className="text-danger">{errors.flyingFrom}</p>
+                          <i className="flaticon-maps-and-flags"></i>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className='col-md-2 col-sm-6 srch-mrgn-btm'>
-                    <div className='table_item'>
-                      <div className='form-group '>
-                        <div className='input-group date'>
-                          <label htmlFor='arrival-date'>Return</label>
-                          <div style={{ width: '100%' }}>
+                    <div className="col-md-2 col-sm-12 srch-mrgn-btm">
+                      <div className="table_item">
+                        <div className="form-group typeahead-dropdown">
+                          <label htmlFor="arrival">Flying To</label>
+                          <Typeahead
+                            id="arrival"
+                            onPaginate={(e) => console.log("Results paginated")}
+                            options={airports}
+                            // filterBy={
+                            //   filterBy === 'callback'
+                            //     ? filterByCallback
+                            //     : filterByFields
+                            // }
+                            filterBy={["fs", "city"]}
+                            paginate
+                            placeholder="Flying to"
+                            labelKey={(option) =>
+                              `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
+                            }
+                            onChange={(e) => {
+                              setErrors({ ...errors, flyingTo: "" });
+                              setFlyingTo(e[0]?.fs ? e[0]?.fs : "");
+                            }}
+                            onFocus={() => setMyFocusState(true)}
+                            defaultInputValue={flyingTo}
+                          />
+                          <p className="text-danger">{errors.flyingTo}</p>
+                          <i class="flaticon-maps-and-flags"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-2 col-sm-6 srch-mrgn-btm">
+                      <div className="table_item">
+                        <div className="form-group">
+                          <div className="input-group date">
+                            <label htmlFor="deparure-date">Departure</label>
                             <DatePicker
-                              style={{ width: '100%' }}
-                              autoComplete='off'
-                              className='form-control'
-                              placeholderText='Return Date'
-                              id='arrival-date'
-                              selected={returnDate}
-                              minDate={departureDate}
-                              disabled={tripType === 'oneWay'}
+                              style={{ width: "100%" }}
+                              autoComplete="off"
+                              className="form-control "
+                              placeholderText="Departure Date"
+                              id="deparure-date"
+                              selected={departureDate}
+                              minDate={new Date()}
                               onChange={(e) => {
-                                e.setSeconds(0)
-                                e.setMilliseconds(0)
-                                setReturnDate(e)
+                                e.setSeconds(0);
+                                e.setMilliseconds(0);
+                                setDepartureDate(e);
+                                setReturnDate(oneWeek(e));
                               }}
                             />
-                            <p className="text-danger">{errors.returnDate}</p>
+                            <p className="text-danger">
+                              {errors.departureDate}
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              ) : (
-                multiFlightSegmentForm.map((multiCity, index) => (
-                  <React.Fragment key={index}>
-                    <div className='col-md-2 col-sm-6' >
-                      <div className='table_item'>
-                        <div className='form-group typeahead-dropdown '>
-                          <label htmlFor='departure'>Flying From</label>
-                          <Typeahead
-                            id='departure'
-                            onPaginate={(e) => console.log('Results paginated')}
-                            options={airports}
-                            // filterBy={
-                            //   filterBy === 'callback'
-                            //     ? filterByCallback
-                            //     : filterByFields
-                            // }
-                            filterBy={['fs', 'city']}
-                            paginate
-                            placeholder='Flying from'
-                            labelKey={(option) =>
-                              `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
-                            }
-                            onChange={(e) =>
-                              changeFlightSegmentValue(
-                                'flyingFrom',
-                                e[0]?.fs ? e[0]?.fs : '',
-                                index
-                              )
-                            }
-                            onFocus ={() => setMyFocusState(true)}
-                            defaultInputValue={flyingFrom}
-                          />
-                          <p className="text-danger">{errors.flyingFrom}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-md-2 col-sm-12' >
-                      <div className='table_item'>
-                        <div className='form-group typeahead-dropdown'>
-                          <label htmlFor='arrival'>Flying To</label>
-                          <Typeahead
-                            id='arrival'
-                            onPaginate={(e) => console.log('Results paginated')}
-                            options={airports}
-                            // filterBy={
-                            //   filterBy === 'callback'
-                            //     ? filterByCallback
-                            //     : filterByFields
-                            // }
-                            filterBy={['fs', 'city']}
-                            paginate
-                            placeholder='Flying to'
-                            labelKey={(option) =>
-                              `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
-                            }
-                            onChange={(e) =>
-                              changeFlightSegmentValue(
-                                'flyingTo',
-                                e[0]?.fs ? e[0]?.fs : '',
-                                index
-                              )
-                            }
-                            onFocus ={() => setMyFocusState(true)}
-                            defaultInputValue={flyingTo}
-                          />
-                          <p className="text-danger">{errors.flyingTo}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-md-2 col-sm-6 srch-mrgn-btm'>
-                      <div className='table_item'>
-                        <div className='form-group'>
-                          <div className='input-group date'>
-                            <label htmlFor='deparure-date'>
-                              Departure Date
-                            </label>
-                            <div style={{ width: '100%' }}>
+                    <div className="col-md-2 col-sm-6 srch-mrgn-btm">
+                      <div className="table_item">
+                        <div className="form-group ">
+                          <div className="input-group date">
+                            <label htmlFor="arrival-date">Return</label>
+                            <div style={{ width: "100%" }}>
                               <DatePicker
-                                style={{ width: '100%' }}
-                                autoComplete='off'
-                                className='form-control'
-                                placeholderText='Departure Date'
-                                id='deparure-date'
-                                selected={
-                                  multiFlightSegmentForm[index].departureDate
-                                }
-                                minDate={
-                                  index <= 0
-                                    ? new Date()
-                                    : multiFlightSegmentForm[index - 1]
-                                      .departureDate
-                                }
+                                style={{ width: "100%" }}
+                                autoComplete="off"
+                                className="form-control"
+                                placeholderText="Return Date"
+                                id="arrival-date"
+                                selected={returnDate}
+                                minDate={departureDate}
+                                disabled={tripType === "oneWay"}
                                 onChange={(e) => {
-                                  e.setSeconds(0)
-                                  e.setMilliseconds(0)
-                                  changeFlightSegmentValue(
-                                    'departureDate',
-                                    e,
-                                    index
-                                  )
+                                  e.setSeconds(0);
+                                  e.setMilliseconds(0);
+                                  setReturnDate(e);
                                 }}
                               />
-                              <p className="text-danger">{errors.departureDate}</p>
+                              <p className="text-danger">{errors.returnDate}</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm form-end-button'> */}
+                  </>
+                ) : (
+                  multiFlightSegmentForm.map((multiCity, index) => (
+                    <React.Fragment key={index}>
+                      <div className="col-md-2 col-sm-6">
+                        <div className="table_item">
+                          <div className="form-group typeahead-dropdown ">
+                            <label htmlFor="departure">Flying From</label>
+                            <Typeahead
+                              id="departure"
+                              onPaginate={(e) =>
+                                console.log("Results paginated")
+                              }
+                              options={airports}
+                              // filterBy={
+                              //   filterBy === 'callback'
+                              //     ? filterByCallback
+                              //     : filterByFields
+                              // }
+                              filterBy={["fs", "city"]}
+                              paginate
+                              placeholder="Flying from"
+                              labelKey={(option) =>
+                                `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
+                              }
+                              onChange={(e) =>
+                                changeFlightSegmentValue(
+                                  "flyingFrom",
+                                  e[0]?.fs ? e[0]?.fs : "",
+                                  index
+                                )
+                              }
+                              onFocus={() => setMyFocusState(true)}
+                              defaultInputValue={flyingFrom}
+                            />
+                            <p className="text-danger">{errors.flyingFrom}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-2 col-sm-12">
+                        <div className="table_item">
+                          <div className="form-group typeahead-dropdown">
+                            <label htmlFor="arrival">Flying To</label>
+                            <Typeahead
+                              id="arrival"
+                              onPaginate={(e) =>
+                                console.log("Results paginated")
+                              }
+                              options={airports}
+                              // filterBy={
+                              //   filterBy === 'callback'
+                              //     ? filterByCallback
+                              //     : filterByFields
+                              // }
+                              filterBy={["fs", "city"]}
+                              paginate
+                              placeholder="Flying to"
+                              labelKey={(option) =>
+                                `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
+                              }
+                              onChange={(e) =>
+                                changeFlightSegmentValue(
+                                  "flyingTo",
+                                  e[0]?.fs ? e[0]?.fs : "",
+                                  index
+                                )
+                              }
+                              onFocus={() => setMyFocusState(true)}
+                              defaultInputValue={flyingTo}
+                            />
+                            <p className="text-danger">{errors.flyingTo}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-2 col-sm-6 srch-mrgn-btm">
+                        <div className="table_item">
+                          <div className="form-group">
+                            <div className="input-group date">
+                              <label htmlFor="deparure-date">
+                                Departure Date
+                              </label>
+                              <div style={{ width: "100%" }}>
+                                <DatePicker
+                                  style={{ width: "100%" }}
+                                  autoComplete="off"
+                                  className="form-control"
+                                  placeholderText="Departure Date"
+                                  id="deparure-date"
+                                  selected={
+                                    multiFlightSegmentForm[index].departureDate
+                                  }
+                                  minDate={
+                                    index <= 0
+                                      ? new Date()
+                                      : multiFlightSegmentForm[index - 1]
+                                          .departureDate
+                                  }
+                                  onChange={(e) => {
+                                    e.setSeconds(0);
+                                    e.setMilliseconds(0);
+                                    changeFlightSegmentValue(
+                                      "departureDate",
+                                      e,
+                                      index
+                                    );
+                                  }}
+                                />
+                                <p className="text-danger">
+                                  {errors.departureDate}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm form-end-button'> */}
                       {index === 1 && multiFlightSegmentForm.length < 5 ? (
-                        <div className='col-md-2 col-sm-6 srch-mrgn-btm form-end-button'>
-                        <Button onClick={addFlightSegment} variant='success'>
-                          <img
-                            src='/images/close.png'
-                            alt=''
-                            className='add-button'
-                          />
-                        </Button>
+                        <div className="col-md-2 col-sm-6 srch-mrgn-btm form-end-button">
+                          <Button onClick={addFlightSegment} variant="success">
+                            <img
+                              src="/images/close.png"
+                              alt=""
+                              className="add-button"
+                            />
+                          </Button>
                         </div>
                       ) : index > 1 ? (
-                        <div className='col-md-2 col-sm-6 srch-mrgn-btm form-end-button'>
-                        <Button
-                          onClick={() => removeFlightSegment(index)}
-                          variant='danger'
-                        >
-                          <img
-                            src='/images/close.png'
-                            alt=''
-                            className='cross-button'
-                          />
-                        </Button>
+                        <div className="col-md-2 col-sm-6 srch-mrgn-btm form-end-button">
+                          <Button
+                            onClick={() => removeFlightSegment(index)}
+                            variant="danger"
+                          >
+                            <img
+                              src="/images/close.png"
+                              alt=""
+                              className="cross-button"
+                            />
+                          </Button>
                         </div>
                       ) : null}
-                    {/* </div> */}
-                  </React.Fragment>
-                ))
-              )}
+                      {/* </div> */}
+                    </React.Fragment>
+                  ))
+                )}
 
-              {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+                {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
                     <label htmlFor='passengers'>Passengers</label>
@@ -784,172 +804,181 @@ const [status, setStatus] = useState(false);
                 </div>
               </div> */}
 
-<div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
-                <div className='table_item'>
-                  <div className='form-group dropdown'>
-                    <label htmlFor='passengers'>Passengers</label>
-                    <div style={{ width: '100%' }} onClick={()=>setStatus(!status)} aria-haspopup="true" aria-expanded="false">
-                    <input
-                        // type='text'
-                        autoComplete='off'
-                        id='passengers'
-                        style={{ width: '100%',color:'black' }}
-                        className='form-control'
-                        placeholder='passengers'
-                        value={`${parseInt(adultPassengers) +
-                          parseInt(youthPassengers) +
-                          parseInt(childPassengers) +
-                          parseInt(infantPassengers)} Traveller, ${prefferedClass}`}/>
-                      <i className='fa fa-user' style={{ top: '40px' }}></i>
-                    </div>
-                    { status?
-                    <div className='adult-class-dropdown'>
-      
-                    <div class="dropdown-item">
-                  {/* Preferred Class */}
-                  {/* <div className='table_item'> */}
-                  <div className='form-group'>
-                    <span htmlFor='class'>Preferred Class</span>
-                    <div style={{ width: '100%' }}>
-                      <select
-                        id='class'
-                        style={{ width: '100%' }}
-                        className='form-select custom-select my-select'
-                        aria-label='Default select example'
-                        onChange={(e) => setPrefferedClass(e.target.value)}
-                      >
-                        {/* <option selected>Class</option> */}
-                        <option selected value='ECONOMY'>Economy</option>
-                        <option value='FIRST'>First</option>
-                        <option value='BUSINESS'>Business</option>
-                      </select>
-                      <i class='flaticon-box' style={{ top: '22px' }}></i>
-                    </div>
-                  </div>
-                  {/* </div> */}
-                  {/* Preferred Class */}
-                    </div>
-                    <>
-                    <Form onSubmit={handleModalSubmit}>
-                      <div class="dropdown-item">
-                      <Form.Group controlId='formBasicEmail'>
-                            {/* <div className="ccontainer"> */}
-                            <span>Adult(s)</span>
-                            <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
-                            <input type='number' className="qquantity__input" 
-                            min='0'
-                            max='100'
-                            placeholder='Adult' 
-                            value={adultPassengers} 
-                            onChange={(e) =>
-                            setAdultPassengers(parseInt(e.target.value))
-                            }/>
-                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>
-                            </div>
-                            {/* </div> */}
-                            </Form.Group>
-                      </div>
-
-                      <div class="dropdown-item">
-                      <Form.Group type='number' placeholder='Children'>
-                            <div className="ccontainer">
-                            <span>Child(ren)</span>
-                            <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
-                            <input type='number' className="qquantity__input" 
-                            min='0'
-                            max='100'
-                            placeholder='Children' 
-                            value={childPassengers} 
-                            onChange={(e) =>
-                              setChildrens(parseInt(e.target.value))
-                            }/>
-                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>
-                            </div>
-                            </div>
-                            </Form.Group>
-                      </div>
-
-                      <div class="dropdown-item">
-                      <Form.Group type='number' placeholder='Youth'>
-                            <div className="ccontainer">
-                            <span>Youth(s)</span>
-                            <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
-                            <input type='number' className="qquantity__input" 
-                            min='0'
-                            max='100'
-                            placeholder='Youth' 
-                            value={youthPassengers} 
-                            onChange={(e) =>
-                              setYouth(parseInt(e.target.value))
-                            }/>
-                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>
-                            </div>
-                            </div>
-                            </Form.Group>
-                      </div>
-
-                      <div class="dropdown-item">
-                      <Form.Group type='number' placeholder='Infant'>
-                            <div className="ccontainer">
-                            <span>Infant(s)</span>
-                            <div className="qquantity">
-                            <a className="qquantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
-                            <input type='number' className="qquantity__input" 
-                            min='0'
-                            max='100'
-                            placeholder='Infant' 
-                            value={infantPassengers} 
-                            onChange={(e) =>
-                              setInfant(parseInt(e.target.value))
-                            }/>
-                            <a className="qquantity__plus" title="Increment" onClick={() => dispatch(incNumber())}><span>+</span></a>   
-                            </div>
-                            </div>
-                            </Form.Group>
-                      </div>
-
-                      <div class="dropdown-item">
-                      {/* <Button className='btn btn-danger btn-sm' style={{marginRight:"10px"}} onClick={handleClose}>Close Modal</Button> */}
-                      <Button className='btn btn-primery btn-sm w-100' onClick={()=>setStatus(!status)}>Submit</Button>
-                      </div>
-                       
-                  </Form>
-                  </>
-                  </div>
-                  :null
+                <div
+                  className="col-md-2 col-sm-6 srch-mrgn-btm"
+                  style={
+                    MyFocusState ? { display: "block" } : { display: "none" }
                   }
+                >
+                  <div className="table_item">
+                    <div className="form-group dropdown">
+                      <label htmlFor="passengers">Passengers</label>
+                      <div
+                        style={{ width: "100%" }}
+                        onClick={() => setStatus(!status)}
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <input
+                          // type='text'
+                          autoComplete="off"
+                          id="passengers"
+                          style={{ width: "100%", color: "black" }}
+                          className="form-control"
+                          placeholder="passengers"
+                          value={`${
+                            parseInt(adultPassengers) +
+                            parseInt(youthPassengers) +
+                            parseInt(childPassengers) +
+                            parseInt(infantPassengers)
+                          } Traveller, ${prefferedClass}`}
+                        />
+                        <i className="fa fa-user" style={{ top: "40px" }}></i>
+                      </div>
+                      {status ? (
+                                      // <div class="more-opt_selector search-link">
+                                      // <span class="date-holder single pointer-hover">
+                                      //   <label class="search-label">Travelers</label>
+                                      //   <span>1 Adult, Economy</span>
+                                      // </span>
+                                      <div class="more-option-drop visible">
+                                        <div class="moreoption-slide-head">
+                                          <span class="cancel-btn" onClick={() => setStatus(!status)} >x</span>
+                                          <span class="sub-title">Travelers &amp; Cabin Class</span>
+                                        </div>
+                                        <div class="cabin-class">
+                                          <span class="title">Class</span>
+                                          <ul class="more-option-links">
+                                            <li id="economy" class="active">
+                                              <a href="javascript:void(0);">Economy</a>
+                                            </li>
+                                            <li id="business">
+                                              <a href="javascript:void(0);">Business</a>
+                                            </li>
+                                            <li id="first">
+                                              <a href="javascript:void(0);">First</a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                        <div class="travelers">
+                                          <span class="title">Travelers</span>
+                                          <ul class="travelers-list">
+                                            <li>
+                                              <div class="left-area">
+                                                <span class="travelers-title">Adults</span>
+                                                <span class="travelers-info">12+ years</span>
+                                              </div>
+                                              <div class="right-area">
+                                                <a href="javascript:void(0)" class="low-btn">
+                                                  --
+                                                </a>
+                                                <span id="adult" class="number">
+                                                  1
+                                                </span>
+                                                <a href="javascript:void(0)" class="high-btn">
+                                                  +
+                                                </a>
+                                              </div>
+                                            </li>
+                                            <li>
+                                            <div class="left-area">
+                                                <span class="travelers-title">Youth</span>
+                                                <span class="travelers-info">12+ years</span>
+                                              </div>
+                                              <div class="right-area">
+                                                <a href="javascript:void(0)" class="low-btn">
+                                                  --
+                                                </a>
+                                                <span id="adult" class="number">
+                                                  0
+                                                </span>
+                                                <a href="javascript:void(0)" class="high-btn">
+                                                  +
+                                                </a>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="left-area">
+                                                <span class="travelers-title">Children</span>
+                                                <span class="travelers-info">2 - 11 years</span>
+                                              </div>
+                                              <div class="right-area">
+                                                <a href="javascript:void(0)" class="low-btn">
+                                                  --
+                                                </a>
+                                                <span id="children" class="number">
+                                                  0
+                                                </span>
+                                                <a href="javascript:void(0)" class="high-btn">
+                                                  +
+                                                </a>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="left-area">
+                                                <span class="travelers-title">Infants</span>
+                                                <span class="travelers-info">0 - 23 Month</span>
+                                              </div>
+                                              <div class="right-area">
+                                                <a href="javascript:void(0)" class="low-btn">
+                                                  --
+                                                </a>
+                                                <span id="infant" class="number">
+                                                  0
+                                                </span>
+                                                <a href="javascript:void(0)" class="high-btn">
+                                                  +
+                                                </a>
+                                              </div>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                        <div class="none-stop">
+                                          <span class="title">Nonstop Flights</span>
+                                          <ul class="more-option-links">
+                                            <li id="yes" class="">
+                                              <a href="javascript:void(0);">yes</a>
+                                            </li>
+                                            <li id="no" class="active">
+                                              <a href="javascript:void(0);">no</a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    // </div>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-
-
-              <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
-                <div className='table_item'>
-                  <div className='form-group typeahead-dropdown'>
-                    <label htmlFor='airline'>Airline</label>
-                    <Typeahead
-                      id='airline'
-                      onPaginate={(e) => console.log('Results paginated')}
-                      options={airlines}
-                      filterBy={
-                        filterBy === 'callback'
-                          ? filterByCallback
-                          : filterByFields
-                      }
-                      paginate
-                      placeholder='Airline'
-                      labelKey={(option) => `${option.name}`}
-                      onChange={(e) => setAirline(e[0]?.fs ? e[0]?.fs : '')}
-                    />
-                    <i class='fa fa-plane' style={{ top: '40px' }}></i>
+                <div
+                  className="col-md-2 col-sm-6 srch-mrgn-btm"
+                  style={
+                    MyFocusState ? { display: "block" } : { display: "none" }
+                  }
+                >
+                  <div className="table_item">
+                    <div className="form-group typeahead-dropdown">
+                      <label htmlFor="airline">Airline</label>
+                      <Typeahead
+                        id="airline"
+                        onPaginate={(e) => console.log("Results paginated")}
+                        options={airlines}
+                        filterBy={
+                          filterBy === "callback"
+                            ? filterByCallback
+                            : filterByFields
+                        }
+                        paginate
+                        placeholder="Airline"
+                        labelKey={(option) => `${option.name}`}
+                        onChange={(e) => setAirline(e[0]?.fs ? e[0]?.fs : "")}
+                      />
+                      <i class="fa fa-plane" style={{ top: "40px" }}></i>
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+                {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
                     <label htmlFor='class'>Cabin</label>
@@ -972,12 +1001,9 @@ const [status, setStatus] = useState(false);
                 </div>
               </div> */}
 
+                {/* yawar */}
 
-                     
-
-{/* yawar */}
-
-{/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+                {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group dropdown'>
                     <label htmlFor='passengers'>Passengers</label>
@@ -1005,36 +1031,39 @@ const [status, setStatus] = useState(false);
                 </div>
               </div> */}
 
-{/* yawar */}
-              <div className='col-md-2 col-sm-6 srch-mrgn-btm'>
-                <div className='table_item'>
-                <div className='form-group'>
-                  <div className='search'>
-                    <label htmlFor='button' style={{ visibility: 'hidden' }}>
-                      a
-                    </label>
-                    <button
-                      id='button1'
-                      className='btn-blue'
-                      type='submit'
-                      style={{ width: '100%' }}
-                      disabled={loading}
-                    >
+ 
 
-                      {loading ? <CircularProgress size={24} /> : 'SEARCH'}
-
-                    </button>
+                {/* yawar */}
+                <div className="col-md-2 col-sm-6 srch-mrgn-btm">
+                  <div className="table_item">
+                    <div className="form-group">
+                      <div className="search">
+                        <label
+                          htmlFor="button"
+                          style={{ visibility: "hidden" }}
+                        >
+                          a
+                        </label>
+                        <button
+                          id="button1"
+                          className="btn-blue"
+                          type="submit"
+                          style={{ width: "100%" }}
+                          disabled={loading}
+                        >
+                          {loading ? <CircularProgress size={24} /> : "SEARCH"}
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </>
-  )
+    </>
+  );
 }
 
 export default FlightSearch

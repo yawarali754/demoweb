@@ -80,10 +80,10 @@ export default function FlightBooking() {
   const validOrNot =
     flightData?.res?.validation?.groupedItineraryResponse?.statistics
       ?.itineraryCount
-  const adult = flightData?.searchData?.formData?.adultPassengers?.incNumber
-  const child = flightData?.searchData?.formData?.childPassengers?.incNumber
-  const youth = flightData?.searchData?.formData?.youthPassengers?.incNumber
-  const infant = flightData?.searchData?.formData?.infantPassengers?.incNumber
+  const adult = flightData?.searchData?.formData?.adultPassengers
+  const child = flightData?.searchData?.formData?.childPassengers
+  const youth = flightData?.searchData?.formData?.youthPassengers
+  const infant = flightData?.searchData?.formData?.infantPassengers
   const totalPassenger = adult + child + youth + infant
 
   const [passengerName, setPassengerName] = useState('')
