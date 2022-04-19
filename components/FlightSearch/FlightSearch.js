@@ -949,7 +949,7 @@ const [status, setStatus] = useState(false);
                   </div>
                 </div>
               </div>
-              <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+              {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
                     <label htmlFor='class'>Cabin</label>
@@ -970,7 +970,8 @@ const [status, setStatus] = useState(false);
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
+
 
                      
 
