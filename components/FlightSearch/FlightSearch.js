@@ -805,13 +805,7 @@ const [status, setStatus] = useState(false);
               </div> */}
 
                 
-
-                <div
-                  className="col-md-2 col-sm-6 srch-mrgn-btm"
-                  style={
-                    MyFocusState ? { display: "block" } : { display: "none" }
-                  }
-                >
+                <div className="col-md-2 col-sm-6 srch-mrgn-btm" style={ MyFocusState ? { display: "block" } : { display: "none" }}>
                   <div className="table_item">
                     <div className="form-group typeahead-dropdown">
                       <label htmlFor="airline">Airline</label>
@@ -894,15 +888,15 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">12+ years</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="" class="low-btn">
+                                                <span href="" class="low-btn">
                                                   --
-                                                </a>
+                                                </span>
                                                 <span id="adult" class="number">
                                                   1
                                                 </span>
-                                                <a href="" class="high-btn">
+                                                <span href="" class="high-btn">
                                                   +
-                                                </a>
+                                                </span>
                                               </div>
                                             </li>
                                             <li>
@@ -911,15 +905,15 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">12+ years</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="" class="low-btn">
+                                                <span href="" class="low-btn">
                                                   --
-                                                </a>
+                                                </span>
                                                 <span id="adult" class="number">
                                                   0
                                                 </span>
-                                                <a href="" class="high-btn">
+                                                <span href="" class="high-btn">
                                                   +
-                                                </a>
+                                                </span>
                                               </div>
                                             </li>
                                             <li>
@@ -928,15 +922,15 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">2 - 11 years</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="" class="low-btn">
+                                                <span href="" class="low-btn">
                                                   --
-                                                </a>
+                                                </span>
                                                 <span id="children" class="number">
                                                   0
                                                 </span>
-                                                <a href="" class="high-btn">
+                                                <span href="" class="high-btn">
                                                   +
-                                                </a>
+                                                </span>
                                               </div>
                                             </li>
                                             <li>
@@ -945,15 +939,15 @@ const [status, setStatus] = useState(false);
                                                 <span class="travelers-info">0 - 23 Month</span>
                                               </div>
                                               <div class="right-area">
-                                                <a href="" class="low-btn">
+                                                <span href="" class="low-btn">
                                                   --
-                                                </a>
+                                                </span>
                                                 <span id="infant" class="number">
                                                   0
                                                 </span>
-                                                <a href="" class="high-btn">
+                                                <span href="" class="high-btn">
                                                   +
-                                                </a>
+                                                </span>
                                               </div>
                                             </li>
                                           </ul>
