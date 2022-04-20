@@ -860,106 +860,109 @@ const [status, setStatus] = useState(false);
                                       //   <label class="search-label">Travelers</label>
                                       //   <span>1 Adult, Economy</span>
                                       // </span>
-                                      <div class="more-option-drop visible">
-                                        <div class="moreoption-slide-head">
-                                          <span class="cancel-btn" onClick={() => setStatus(!status)} >x</span>
-                                          <span class="sub-title">Travelers &amp; Cabin Class</span>
+                                      <div className="more-option-drop visible">
+                                        <div className="moreoption-slide-head">
+                                          <span className="cancel-btn" onClick={() => setStatus(!status)} >x</span>
+                                          <span className="sub-title">Travelers &amp; Cabin Class</span>
                                         </div>
-                                        <div class="cabin-class">
-                                          <span class="title">Class</span>
-                                          <ul class="more-option-links">
-                                            <li id="economy" class="active">
-                                              <a href="#">Economy</a>
+                                        <div className="cabin-class">
+                                          <span className="title">Class</span>
+                                          <ul className="more-option-links">
+                                            <li id="economy" className="active">
+                                              <span>Economy</span>
                                             </li>
+                                            {/* <li id="premium_economy">
+                                              <span href="#">Premium Economy</span>
+                                            </li> */}
                                             <li id="business">
-                                              <a href="#">Business</a>
+                                              <span>Business</span>
                                             </li>
                                             <li id="first">
-                                              <a href="#">First</a>
+                                              <span>First</span>
                                             </li>
                                           </ul>
                                         </div>
-                                        <div class="travelers">
-                                          <span class="title">Travelers</span>
-                                          <ul class="travelers-list">
+                                        <div className="travelers">
+                                          <span className="title">Travelers</span>
+                                          <ul className="travelers-list">
                                             <li>
-                                              <div class="left-area">
-                                                <span class="travelers-title">Adults</span>
-                                                <span class="travelers-info">12+ years</span>
+                                              <div className="left-area">
+                                                <span className="travelers-title">Adults</span>
+                                                <span className="travelers-info">12+ years</span>
                                               </div>
-                                              <div class="right-area">
-                                                <span href="" class="low-btn">
-                                                  --
+                                              <div className="right-area">
+                                                <span className="low-btn">
+                                                  -
                                                 </span>
-                                                <span id="adult" class="number">
+                                                <span id="adult" className="number">
                                                   1
                                                 </span>
-                                                <span href="" class="high-btn">
+                                                <span className="high-btn">
                                                   +
                                                 </span>
                                               </div>
                                             </li>
                                             <li>
-                                            <div class="left-area">
-                                                <span class="travelers-title">Youth</span>
-                                                <span class="travelers-info">12+ years</span>
+                                            <div className="left-area">
+                                                <span className="travelers-title">Youth</span>
+                                                <span className="travelers-info">12+ years</span>
                                               </div>
-                                              <div class="right-area">
-                                                <span href="" class="low-btn">
-                                                  --
+                                              <div className="right-area">
+                                                <span className="low-btn">
+                                                  -
                                                 </span>
-                                                <span id="adult" class="number">
+                                                <span id="adult" className="number">
                                                   0
                                                 </span>
-                                                <span href="" class="high-btn">
+                                                <span className="high-btn">
                                                   +
                                                 </span>
                                               </div>
                                             </li>
                                             <li>
-                                              <div class="left-area">
-                                                <span class="travelers-title">Children</span>
-                                                <span class="travelers-info">2 - 11 years</span>
+                                              <div className="left-area">
+                                                <span className="travelers-title">Children</span>
+                                                <span className="travelers-info">2 - 11 years</span>
                                               </div>
-                                              <div class="right-area">
-                                                <span href="" class="low-btn">
-                                                  --
+                                              <div className="right-area">
+                                                <span className="low-btn">
+                                                  -
                                                 </span>
-                                                <span id="children" class="number">
+                                                <span id="children" className="number">
                                                   0
                                                 </span>
-                                                <span href="" class="high-btn">
+                                                <span className="high-btn">
                                                   +
                                                 </span>
                                               </div>
                                             </li>
                                             <li>
-                                              <div class="left-area">
-                                                <span class="travelers-title">Infants</span>
-                                                <span class="travelers-info">0 - 23 Month</span>
+                                              <div className="left-area">
+                                                <span className="travelers-title">Infants</span>
+                                                <span className="travelers-info">0 - 23 Month</span>
                                               </div>
-                                              <div class="right-area">
-                                                <span href="" class="low-btn">
-                                                  --
+                                              <div className="right-area">
+                                                <span className="low-btn">
+                                                  -
                                                 </span>
-                                                <span id="infant" class="number">
+                                                <span id="infant" className="number">
                                                   0
                                                 </span>
-                                                <span href="" class="high-btn">
+                                                <span className="high-btn">
                                                   +
                                                 </span>
                                               </div>
                                             </li>
                                           </ul>
                                         </div>
-                                        <div class="none-stop">
-                                          <span class="title">Nonstop Flights</span>
-                                          <ul class="more-option-links">
-                                            <li id="yes" class="">
-                                              <a href="">yes</a>
+                                        <div className="none-stop">
+                                          <span className="title">Nonstop Flights</span>
+                                          <ul className="more-option-links">
+                                            <li id="yes" className="">
+                                              <span>yes</span>
                                             </li>
-                                            <li id="no" class="active">
-                                              <a href="">no</a>
+                                            <li id="no" className="active">
+                                              <span>no</span>
                                             </li>
                                           </ul>
                                         </div>
