@@ -14,6 +14,7 @@ import {Input} from '@material-ui/core';
 import { incNumber } from '../../redux/actions/flightActions'
 import { decNumber } from '../../redux/actions/flightActions'
 import  Select  from 'react-select';
+import { Stepper } from '@material-ui/core'
 
 const airports = require('iata-airports/active_airports.json')
 const airlines = require('iata-airlines/active_airlines.json')
@@ -49,9 +50,9 @@ myData?.adultPassengers || 1)
     myData?.directFlight || false
   )
 
-  const [flexi, setFlexi] = useState(
-    myData?.directFlight || false
-  )
+  // const [flexi, setFlexi] = useState(
+  //   myData?.directFlight || false
+  // )
 
   const [filterBy, setFilterBy] = useState('callback')
   const filterByCallback = (option, props) =>
@@ -176,7 +177,7 @@ myData?.adultPassengers || 1)
       multiFlightSegmentForm,
       tripType,
       directFlight,
-      flexi,
+      // flexi,
     }
     setErrors(validate(formData))
     console.log("formData", formData)
@@ -372,6 +373,8 @@ myData?.adultPassengers || 1)
 
 const [status, setStatus] = useState(false);
 
+const [count, setCount] = useState(0);
+
   return (
     <>
       <div className="container">
@@ -424,7 +427,7 @@ const [status, setStatus] = useState(false);
                   Direct Flights Only
                 </label>
               </div>
-              <div className="form-check form-check-inline pl-2">
+              {/* <div className="form-check form-check-inline pl-2">
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -434,7 +437,7 @@ const [status, setStatus] = useState(false);
                 <label className="form-check-label" for="checkbox1">
                   Flexi (+/- 3 days)
                 </label>
-              </div>
+              </div> */}
               <div className="row my-row">
                 {tripType !== "multiCity" ? (
                   <>
@@ -891,13 +894,13 @@ const [status, setStatus] = useState(false);
                                                 <span className="travelers-info">12+ years</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn">
+                                                <span className="low-btn" onClick={() => setAdultPassengers(adultPassengers - 1)}>
                                                   -
                                                 </span>
                                                 <span id="adult" className="number">
-                                                  1
+                                                  {adultPassengers}
                                                 </span>
-                                                <span className="high-btn">
+                                                <span className="high-btn" onClick={() => setAdultPassengers(adultPassengers + 1)}>
                                                   +
                                                 </span>
                                               </div>
@@ -908,13 +911,13 @@ const [status, setStatus] = useState(false);
                                                 <span className="travelers-info">12+ years</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn">
+                                                <span className="low-btn" onClick={() => setYouth(youthPassengers - 1)}>
                                                   -
                                                 </span>
                                                 <span id="adult" className="number">
-                                                  0
+                                                  {youthPassengers}
                                                 </span>
-                                                <span className="high-btn">
+                                                <span className="high-btn" onClick={() => setYouth(youthPassengers + 1)}>
                                                   +
                                                 </span>
                                               </div>
@@ -925,13 +928,13 @@ const [status, setStatus] = useState(false);
                                                 <span className="travelers-info">2 - 11 years</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn">
+                                                <span className="low-btn" onClick={() => setChildrens(childPassengers - 1)}>
                                                   -
                                                 </span>
                                                 <span id="children" className="number">
-                                                  0
+                                                  {childPassengers}
                                                 </span>
-                                                <span className="high-btn">
+                                                <span className="high-btn" onClick={() => setChildrens(childPassengers + 1)}>
                                                   +
                                                 </span>
                                               </div>
@@ -942,13 +945,13 @@ const [status, setStatus] = useState(false);
                                                 <span className="travelers-info">0 - 23 Month</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn">
+                                                <span className="low-btn" onClick={() => setInfant(infantPassengers - 1)}>
                                                   -
                                                 </span>
                                                 <span id="infant" className="number">
-                                                  0
+                                                  {infantPassengers}
                                                 </span>
-                                                <span className="high-btn">
+                                                <span className="high-btn" onClick={() => setInfant(infantPassengers + 1)}>
                                                   +
                                                 </span>
                                               </div>
@@ -975,7 +978,7 @@ const [status, setStatus] = useState(false);
 
 
 
-                {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+                <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
                     <label htmlFor='class'>Cabin</label>
@@ -996,7 +999,7 @@ const [status, setStatus] = useState(false);
                     </div>
                   </div>
                 </div>
-              </div> */}
+              </div>
 
                 {/* yawar */}
 

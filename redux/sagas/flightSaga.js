@@ -17,6 +17,9 @@ import {
   requestFlightFailed,
   saveBookingFailed,
   savedBookingRec,
+  // INCREMENT,
+  // DECREMENT,
+  // INCREMENT_ASYNC,
 } from '../actions/flightActions'
 
 export function* flightSaga(payload) {
@@ -61,3 +64,13 @@ export function* getSavedBooking(payload) {
     yield put(getSavedBookingFailed(error))
   }
 }
+
+// export function* incrementAsync() {
+//   yield put({ type: INCREMENT });
+//   yield delay(1000);
+//   yield put({ type: DECREMENT });
+//   yield delay(1000);
+//   yield put({ type: INCREMENT });
+//   yield delay(1000);
+//   yield put({ type: DECREMENT });
+// }

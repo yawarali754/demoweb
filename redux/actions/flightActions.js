@@ -15,6 +15,7 @@ export const GET_SAVE_BOOKING_FAILED = "GET_SAVE_BOOKING_FAILED";
 export const SAVED_BOOKING_RECEIVED = "SAVED_BOOKING_RECEIVED";
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
+export const INCREMENT_ASYNC = "INCREMENT_ASYNC";
 
 export const requestFlightData = (data) => ({
   type: REQUEST_FLIGHT_DATA,
@@ -127,3 +128,11 @@ export const decNumber = () => {
     payload: -1,
   };
 };
+
+// export const incAsync = () =>{
+//   return{
+//     type: INCREMENT_ASYNC,
+//     payload: +2,
+//   };
+// };
+

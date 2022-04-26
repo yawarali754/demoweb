@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Flight380</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <script src='js/custom-swiper2.js'></script>
+        {/* <script src='js/custom-swiper2.js'></script> */}
       </Head>
       <Main />
     </div>

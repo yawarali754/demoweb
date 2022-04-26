@@ -18,6 +18,7 @@ import {
   flightValidation,
   getSavedBooking,
   pnrCreation,
+  // incrementAsync,
 } from './flightSaga'
 import {
   createOfferSaga,
@@ -52,6 +53,7 @@ export default function* watchUserAuthentication() {
   yield takeLatest(typees.CREATE_OFFER, createOfferSaga)
   yield takeLatest(typees.DELETE_OFFER, deleteOfferSaga)
   yield takeLatest(typees.UPDATE_OFFER, updateOfferSaga)
+  // yield takeLatest(typees.INCREMENT_ASYNC, incrementAsync)
   yield take(types.USER_LOGOUT, logOutSaga)
 
   console.log('Hello coder from watchers!!')
