@@ -574,7 +574,7 @@ a {
     width: 70px
 }
 
-.travelers .travelers-list li .right-area .high-btn, .travelers .travelers-list li .right-area .low-btn {
+.travelers .travelers-list li .right-area .high-btn , .travelers .travelers-list li .right-area .low-btn {
     border: 1px solid #000;
     color: #000;
     float: left;

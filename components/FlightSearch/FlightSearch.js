@@ -50,6 +50,42 @@ myData?.adultPassengers || 1)
     myData?.directFlight || false
   )
 
+  // Yawar Code
+
+  const SetCountAdult = () =>{
+    if(adultPassengers<2){
+        setAdultPassengers(1)
+    }
+    else if(adultPassengers>=0){
+      setAdultPassengers(adultPassengers-1)
+    }}
+
+  const SetCountYouth = () =>{
+    if(youthPassengers<2){
+      setYouth(0)
+  }
+  else if(youthPassengers>=0){
+    setYouth(youthPassengers-1)
+  }}
+
+  const SetCountChild = () =>{
+    if(childPassengers<2){
+      setChildrens(0)
+  }
+  else if(childPassengers>=0){
+    setChildrens(childPassengers-1)
+  }}
+
+  const SetCountInfant = () =>{
+    if(infantPassengers<2){
+      setInfant(0)
+  }
+  else if(infantPassengers>=0){
+    setInfant(infantPassengers-1)
+  }}
+
+  // Yawar Code
+
   // const [flexi, setFlexi] = useState(
   //   myData?.directFlight || false
   // )
@@ -79,18 +115,18 @@ myData?.adultPassengers || 1)
     ]
   )
   useEffect(async () => {
-    console.log('Values updated', selectedOfferFromCity, selectedOfferToCity)
+    // console.log('Values updated', selectedOfferFromCity, selectedOfferToCity)
     await setFlyingFrom(selectedOfferFromCity)
     await setFlyingTo(selectedOfferToCity)
 
     if (selectedOfferFromCity) {
       document.querySelector('#button1').click()
-      console.log('clicked')
+      // console.log('clicked')
     }
   }, [selectedOfferFromCity, selectedOfferToCity])
 
   useEffect(() => {
-    console.log("errors", errors)
+    // console.log("errors", errors)
   }, [errors])
 
   const validate = (values) => {
@@ -107,7 +143,7 @@ myData?.adultPassengers || 1)
     if (!values.departureDate) {
       errorsObj.departureDate = "Departure Date is required"
     }
-    console.log("errorsObj", errorsObj)
+    // console.log("errorsObj", errorsObj)
     return errorsObj;
   }
 
@@ -115,6 +151,9 @@ myData?.adultPassengers || 1)
     let items = airports.filter((item) => item.fs === code)
     return `${items[0].fs} - ${items[0].city} - ${items[0].name} - ${items[0].countryName}`
   }
+
+  
+
   const oneWeek = (date) => {
     const nextWeek = new Date(
       date.getFullYear(),
@@ -373,7 +412,7 @@ myData?.adultPassengers || 1)
 
 const [status, setStatus] = useState(false);
 
-const [count, setCount] = useState(0);
+
 
   return (
     <>
@@ -894,7 +933,7 @@ const [count, setCount] = useState(0);
                                                 <span className="travelers-info">12+ years</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn" onClick={() => setAdultPassengers(adultPassengers - 1)}>
+                                                <span className="low-btn" onClick={SetCountAdult}>
                                                   -
                                                 </span>
                                                 <span id="adult" className="number">
@@ -911,7 +950,7 @@ const [count, setCount] = useState(0);
                                                 <span className="travelers-info">12+ years</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn" onClick={() => setYouth(youthPassengers - 1)}>
+                                                <span className="low-btn" onClick={SetCountYouth}>
                                                   -
                                                 </span>
                                                 <span id="adult" className="number">
@@ -928,7 +967,7 @@ const [count, setCount] = useState(0);
                                                 <span className="travelers-info">2 - 11 years</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn" onClick={() => setChildrens(childPassengers - 1)}>
+                                                <span className="low-btn" onClick={SetCountChild}>
                                                   -
                                                 </span>
                                                 <span id="children" className="number">
@@ -945,7 +984,7 @@ const [count, setCount] = useState(0);
                                                 <span className="travelers-info">0 - 23 Month</span>
                                               </div>
                                               <div className="right-area">
-                                                <span className="low-btn" onClick={() => setInfant(infantPassengers - 1)}>
+                                                <span className="low-btn" onClick={SetCountInfant}>
                                                   -
                                                 </span>
                                                 <span id="infant" className="number">
