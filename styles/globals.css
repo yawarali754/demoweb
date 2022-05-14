@@ -593,6 +593,15 @@ a {
     cursor: pointer;
 }
 
+.btn-confirm{
+    width: 100%;
+    color: #fff !important;
+    background: #191e27 !important;
+    border-color: #191e27 !important;
+    padding: 5px;
+    border-radius: 4px;
+}
+
 .travelers .travelers-list li .right-area .low-btn {
     letter-spacing: -2px;
     opacity: .5

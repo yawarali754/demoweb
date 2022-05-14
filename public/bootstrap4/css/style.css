@@ -556,6 +556,7 @@ section.breadcrumb-outer {
     width: 100%;
     float: left;
     font-weight: bold;
+    /* font-size: 14px; */
 }
 
 .detail-panel .f-date {
@@ -1503,6 +1504,8 @@ tr:nth-child(even) {
     text-align: center;
     left: 0;
 }
+
+
 
 .table_item input[type='text'],
 .table_item input[type='email'],

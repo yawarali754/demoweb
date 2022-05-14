@@ -10,11 +10,6 @@ import { toast } from 'react-toastify'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { formatDate } from '../../public/js/utils'
-import {Input} from '@material-ui/core';
-import { incNumber } from '../../redux/actions/flightActions'
-import { decNumber } from '../../redux/actions/flightActions'
-import  Select  from 'react-select';
-import { Stepper } from '@material-ui/core'
 
 const airports = require('iata-airports/active_airports.json')
 const airlines = require('iata-airlines/active_airlines.json')
@@ -95,7 +90,7 @@ myData?.adultPassengers || 1)
     option.fs.toLowerCase().indexOf(props.text.toLowerCase()) !== -1
   const [airline, setAirline] = useState('')
   const [prefferedClass, setPrefferedClass] = useState(
-    myData?.prefferedClass || ''
+    myData?.prefferedClass || 'Economy'
   )
   const [tripType, setTripType] = useState(myData?.tripType || 'roundTrip')
   const [show, setShow] = useState(false)
@@ -348,7 +343,7 @@ myData?.adultPassengers || 1)
         } else {
           dataa.OTA_AirLowFareSearchRQ.OriginDestinationInformation.push({
             RPH: index + 1 + '',
-            DepartureDateTime: `${formatDate(data.departureDate)}`,
+            DepartureDateTime: `${flight(data.departureDate)}`,
             OriginLocation: {
               LocationCode: data.flyingFrom,
             },
@@ -910,16 +905,18 @@ const [status, setStatus] = useState(false);
                                         <div className="cabin-class">
                                           <span className="title">Class</span>
                                           <ul className="more-option-links">
-                                            <li id="economy" className="active">
+                                            <li className="active" onClick={(e) => setPrefferedClass("Economy")} 
+                                            // style={{`(setPrefferedClass==="Economy")`? (): }}
+                                            >
                                               <span>Economy</span>
                                             </li>
-                                            {/* <li id="premium_economy">
-                                              <span href="#">Premium Economy</span>
-                                            </li> */}
-                                            <li id="business">
+                                            <li onClick={(e) => setPrefferedClass("Premier-Economy")}>
+                                              <span>Premier Economy</span>
+                                            </li>
+                                            <li onClick={(e) => setPrefferedClass("Business")}>
                                               <span>Business</span>
                                             </li>
-                                            <li id="first">
+                                            <li onClick={(e) => setPrefferedClass("First")}>
                                               <span>First</span>
                                             </li>
                                           </ul>
@@ -940,7 +937,7 @@ const [status, setStatus] = useState(false);
                                                   {adultPassengers}
                                                 </span>
                                                 <span className="high-btn" onClick={() => setAdultPassengers(adultPassengers + 1)}>
-                                                  +
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
                                                 </span>
                                               </div>
                                             </li>
@@ -997,7 +994,7 @@ const [status, setStatus] = useState(false);
                                             </li>
                                           </ul>
                                         </div>
-                                        <div className="none-stop">
+                                        {/* <div className="none-stop">
                                           <span className="title">Nonstop Flights</span>
                                           <ul className="more-option-links">
                                             <li id="yes" className="">
@@ -1007,6 +1004,9 @@ const [status, setStatus] = useState(false);
                                               <span>no</span>
                                             </li>
                                           </ul>
+                                        </div> */}
+                                        <div>
+                                        <button className='btn-confirm' onClick={() => setStatus(!status)}>Confirm</button>
                                         </div>
                                       </div>
                                     // </div>
@@ -1017,7 +1017,7 @@ const [status, setStatus] = useState(false);
 
 
 
-                <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
+                {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm' style={MyFocusState ? {'display':'block'} : {'display':'none'}}>
                 <div className='table_item'>
                   <div className='form-group'>
                     <label htmlFor='class'>Cabin</label>
@@ -1038,7 +1038,7 @@ const [status, setStatus] = useState(false);
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
                 {/* yawar */}
 
@@ -1090,7 +1090,7 @@ const [status, setStatus] = useState(false);
                           style={{ width: "100%" }}
                           disabled={loading}
                         >
-                          {loading ? <CircularProgress size={24} /> : "SEARCH"}
+                          {loading ? <CircularProgress size={22} /> : "Show Flight"}
                         </button>
                       </div>
                     </div>

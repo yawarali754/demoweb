@@ -73,7 +73,6 @@ export default function FlightBooking() {
   }
   const flightData = useSelector((state) => state.flightData)
   const { loading } = flightData
-
   const flightSearchData =
     flightData?.response?.data?.OTA_AirLowFareSearchRS?.PricedItineraries
       ?.PricedItinerary
