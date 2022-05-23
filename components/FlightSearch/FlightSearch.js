@@ -45,7 +45,7 @@ myData?.adultPassengers || 1)
     myData?.directFlight || false
   )
 
-  // Yawar Code
+  // Yawar Code 
 
   const SetCountAdult = () =>{
     if(adultPassengers<2){
@@ -90,7 +90,7 @@ myData?.adultPassengers || 1)
     option.fs.toLowerCase().indexOf(props.text.toLowerCase()) !== -1
   const [airline, setAirline] = useState('')
   const [prefferedClass, setPrefferedClass] = useState(
-    myData?.prefferedClass || 'Economy'
+    myData?.prefferedClass || "Economy"
   )
   const [tripType, setTripType] = useState(myData?.tripType || 'roundTrip')
   const [show, setShow] = useState(false)
@@ -492,7 +492,7 @@ const [status, setStatus] = useState(false);
                             paginate
                             placeholder="Flying from"
                             labelKey={(option) =>
-                              `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
+                            `${option.fs} - ${option.city} - ${option.name} - ${option.countryName}`
                             }
                             // labelKey={'city'}
                             onChange={(e) => {
@@ -937,7 +937,8 @@ const [status, setStatus] = useState(false);
                                                   {adultPassengers}
                                                 </span>
                                                 <span className="high-btn" onClick={() => setAdultPassengers(adultPassengers + 1)}>
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                {/* <i class="fa fa-plus" aria-hidden="true"></i> */}
+                                                +
                                                 </span>
                                               </div>
                                             </li>

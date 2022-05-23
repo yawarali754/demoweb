@@ -246,53 +246,58 @@ export default function FlightList() {
   };
 
   const expandRow = {
-    renderer: (row) => (
-      <>
-        {console.log("this yawar", row)}
-        {row?.AirItinerary?.OriginDestinationOptions?.OriginDestinationOption.map(
-          (origin) => (
-            <div>
-              {origin?.FlightSegment.map((leg, index) => {
-                return (
-                  <>
-                    <div className="outbound-panel-content ">
-                      <div>
-                        <div
-                          className={
-                            origin?.FlightSegment.length - 1 === index
-                              ? "detail-panel last-leg"
-                              : "detail-panel"
-                          }
-                        >
-                          <div className="box1">
-                            <div className="flight-name-logo">
-                              <div className="flight-content">
-                                <span className="code">
-                                  {leg?.OperatingAirline?.Code}{" "}
-                                  {leg?.OperatingAirline?.FlightNumber}
-                                  {/* {console.log(leg)} */}
-                                </span>
-                                <span className="code">Economy</span>
+    renderer: (row) => {
+      let fareInfos =
+        row?.AirItineraryPricingInfo[0]?.FareInfos?.FareInfo[0]?.TPA_Extensions
+          ?.Cabin?.Cabin;
+      return (
+        <>
+          {row?.AirItinerary?.OriginDestinationOptions?.OriginDestinationOption.map(
+            (origin) => (
+              <div>
+                {origin?.FlightSegment.map((leg, index) => {
+                  return (
+                    <>
+                      <div className="outbound-panel-content ">
+                        <div>
+                          <div
+                            className={
+                              origin?.FlightSegment.length - 1 === index
+                                ? "detail-panel last-leg"
+                                : "detail-panel"
+                            }
+                          >
+                            <div className="box1">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="code">
+                                    {leg?.OperatingAirline?.Code}{" "}
+                                    {leg?.OperatingAirline?.FlightNumber}
+                                    {/* {console.log(leg)} */}
+                                  </span>
+                                  <span className="code">
+                                    {cabinConfirmation(fareInfos)}
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <div className="box2">
-                            <div className="flight-name-logo">
-                              <div className="flight-content">
-                                <span className="code">Depart</span>
-                                <span className="f-time">
-                                  {leg?.DepartureDateTime}
-                                </span>
+                            <div className="box2">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="code">Depart</span>
+                                  <span className="f-time">
+                                    {leg?.DepartureDateTime}
+                                  </span>
 
-                                <span className="f-airport">
-                                  {leg?.DepartureAirport?.LocationCode}
-                                </span>
+                                  <span className="f-airport">
+                                    {leg?.DepartureAirport?.LocationCode}
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          {/* <div className='box2'>
+                            {/* <div className='box2'>
                             <span className='f-title'>Depart</span>
                             <span className='f-time'>
                               {leg?.DepartureDateTime}
@@ -303,20 +308,20 @@ export default function FlightList() {
                             </span>
                           </div> */}
 
-                          <div className="box3">
-                            <div className="flight-name-logo">
-                              <div className="flight-content">
-                                <span className="f-departure-return-status">
-                                  <i className="fa fa-long-arrow-right"></i>
-                                </span>
-                                <span className="f-duration">
-                                  {minuteToTime(leg?.ElapsedTime)}
-                                </span>
+                            <div className="box3">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="f-departure-return-status">
+                                    <i className="fa fa-long-arrow-right"></i>
+                                  </span>
+                                  <span className="f-duration">
+                                    {minuteToTime(leg?.ElapsedTime)}
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          {/* <div className='box3'>
+                            {/* <div className='box3'>
                             <span className='f-departure-return-status'>
                               <i className='fa fa-long-arrow-right'></i>
                             </span>
@@ -325,22 +330,22 @@ export default function FlightList() {
                             </span>
                           </div> */}
 
-                          <div className="box4">
-                            <div className="flight-name-logo">
-                              <div className="flight-content">
-                                <span className="f-title">Arrive</span>
-                                <span className="f-time">
-                                  {leg?.ArrivalDateTime}
-                                </span>
+                            <div className="box4">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="f-title">Arrive</span>
+                                  <span className="f-time">
+                                    {leg?.ArrivalDateTime}
+                                  </span>
 
-                                <span className="f-airport">
-                                  {leg?.ArrivalAirport?.LocationCode}
-                                </span>
+                                  <span className="f-airport">
+                                    {leg?.ArrivalAirport?.LocationCode}
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          {/* <div className='box4'>
+                            {/* <div className='box4'>
                             <span className='f-title'>Arrive</span>
                             <span className='f-time'>
                               {leg?.ArrivalDateTime}
@@ -350,76 +355,78 @@ export default function FlightList() {
                               {leg?.ArrivalAirport?.LocationCode}
                             </span>
                           </div> */}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {origin?.FlightSegment.length - 1 !== index ? (
-                      <div className="layover-full">
-                        <p className="layover-text">
-                          {/* <span className='layover-icon'></span> */}
-                          <span className="layover-title">Layover</span>{" "}
-                          <span className="text"> | </span>{" "}
-                          <span className="text">
-                            {leg?.ArrivalAirport?.LocationCode}
-                          </span>
-                        </p>
-                      </div>
-                    ) : null}
-                  </>
-                );
-              })}
-            </div>
-          )
-        )}
-        <div style={{ width: "100%" }}>
-          <div
-            style={{
-              float: "right",
-              border: "1px solid",
-              borderRadius: "5px",
-              padding: "15px",
-              width: "100%",
-              marginTop: 20,
-            }}
-          >
-            <h3>Fare Details</h3>
-            {row?.AirItineraryPricingInfo?.map((fareInfo) => (
-              <div>
-                {/* <h5>Base Fare and Charges : </h5> */}
-                <h5>
-                  Base Fare :{" "}
-                  <span style={{ float: "right" }}>
-                    {getSymbolFromCurrency(
-                      fareInfo?.ItinTotalFare?.EquivFare?.CurrencyCode
-                    )}{" "}
-                    {fareInfo?.ItinTotalFare?.EquivFare?.Amount}
-                  </span>
-                </h5>
-                <h5>
-                  Tax Amount :{" "}
-                  <span style={{ float: "right" }}>
-                    {fareInfo?.ItinTotalFare?.Taxes?.Tax?.map((tax) => (
-                      <div>
-                        {getSymbolFromCurrency(tax?.CurrencyCode)} {tax?.Amount}
-                      </div>
-                    ))}
-                  </span>
-                </h5>
-                <h5>
-                  Total Fare :{" "}
-                  <span style={{ float: "right" }}>
-                    {getSymbolFromCurrency(
-                      fareInfo?.ItinTotalFare?.TotalFare?.CurrencyCode
-                    )}{" "}
-                    {fareInfo?.ItinTotalFare?.TotalFare?.Amount}
-                  </span>
-                </h5>
+                      {origin?.FlightSegment.length - 1 !== index ? (
+                        <div className="layover-full">
+                          <p className="layover-text">
+                            {/* <span className='layover-icon'></span> */}
+                            <span className="layover-title">Layover</span>{" "}
+                            <span className="text"> | </span>{" "}
+                            <span className="text">
+                              {leg?.ArrivalAirport?.LocationCode}
+                            </span>
+                          </p>
+                        </div>
+                      ) : null}
+                    </>
+                  );
+                })}
               </div>
-            ))}
+            )
+          )}
+          <div style={{ width: "100%" }}>
+            <div
+              style={{
+                float: "right",
+                border: "1px solid",
+                borderRadius: "5px",
+                padding: "15px",
+                width: "100%",
+                marginTop: 20,
+              }}
+            >
+              <h3>Fare Details</h3>
+              {row?.AirItineraryPricingInfo?.map((fareInfo) => (
+                <div>
+                  {/* <h5>Base Fare and Charges : </h5> */}
+                  <h5>
+                    Base Fare :{" "}
+                    <span style={{ float: "right" }}>
+                      {getSymbolFromCurrency(
+                        fareInfo?.ItinTotalFare?.EquivFare?.CurrencyCode
+                      )}{" "}
+                      {fareInfo?.ItinTotalFare?.EquivFare?.Amount}
+                    </span>
+                  </h5>
+                  <h5>
+                    Tax Amount :{" "}
+                    <span style={{ float: "right" }}>
+                      {fareInfo?.ItinTotalFare?.Taxes?.Tax?.map((tax) => (
+                        <div>
+                          {getSymbolFromCurrency(tax?.CurrencyCode)}{" "}
+                          {tax?.Amount}
+                        </div>
+                      ))}
+                    </span>
+                  </h5>
+                  <h5>
+                    Total Fare :{" "}
+                    <span style={{ float: "right" }}>
+                      {getSymbolFromCurrency(
+                        fareInfo?.ItinTotalFare?.TotalFare?.CurrencyCode
+                      )}{" "}
+                      {fareInfo?.ItinTotalFare?.TotalFare?.Amount}
+                    </span>
+                  </h5>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </>
-    ),
+        </>
+      );
+    },
   };
 
   const columns = [
@@ -444,10 +451,12 @@ export default function FlightList() {
       formatter: (cell, row) => {
         let originDestination =
           row?.AirItinerary?.OriginDestinationOptions?.OriginDestinationOption;
-        let fareInfos = row?.AirItineraryPricingInfo[0]?.FareInfos?.FareInfo[0]?.TPA_Extensions?.Cabin?.Cabin
+        let fareInfos =
+          row?.AirItineraryPricingInfo[0]?.FareInfos?.FareInfo[0]
+            ?.TPA_Extensions?.Cabin?.Cabin;
         return (
           <div>
-            {console.log("ali" ,originDestination)}
+            {console.log("ali", fareInfos)}
             {originDestination.map((destination) => (
               <div className="flight-info-card">
                 <h5 className="flight-info-name">
@@ -462,7 +471,7 @@ export default function FlightList() {
                 </h5>
                 <h6>
                   {/* {console.log("yawar", cabinConfirmation)} */}
-                  {cabinConfirmation(fareInfos)}
+                  {/* {cabinConfirmation(fareInfos)} */}
                   {calculateStop(destination?.FlightSegment)}
                   {" | "}
                   {minuteToTime(destination?.ElapsedTime)}
@@ -499,6 +508,17 @@ export default function FlightList() {
                 ?.CurrencyCode
             )}{" "}
             {row.AirItineraryPricingInfo[0]?.ItinTotalFare?.TotalFare?.Amount}
+            <br/>
+            {row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Weight?row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Weight
+            +
+            row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Unit:
+            
+            row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Pieces+"PC"
+            }
           </h3>
 
           <button

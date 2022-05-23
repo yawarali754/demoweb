@@ -7,7 +7,7 @@ import {
 } from '../../redux/actions/flightActions'
 import { CountryDropdown } from 'react-country-region-selector'
 import swal from 'sweetalert'
-import { minuteToTime, changePassengerCode } from '../../public/js/utils'
+import { minuteToTime, changePassengerCode, cabinConfirmation } from '../../public/js/utils'
 import getSymbolFromCurrency from 'currency-symbol-map'
 import Link from 'next/link'
 import { CircularProgress } from '@material-ui/core'
@@ -540,6 +540,7 @@ export default function FlightBooking() {
                                           </div>
                                         </div>
                                       </div>
+                                      
                                       <div className='box2'>
                                         <span className='f-title'>Depart</span>
                                         <span className='f-time'>
@@ -815,7 +816,7 @@ export default function FlightBooking() {
                     <h3>Fare Details</h3>
                     {flightFare?.map((fareInfo) => (
                       <div className='sidebar-helpline-content'>
-                        <h5 style={{ color: 'white' }} className='price-panel'>
+                        <h5 className='price-panel'>
                           Base Fare and Charges :{' '}
                         </h5>
                         <div className='price-detail-panel-full'>
@@ -843,7 +844,7 @@ export default function FlightBooking() {
                             )}
                           </ol>
                         </div>
-                        <h5 style={{ color: 'white' }}>
+                        <h5>
                           Total Fare :{' '}
                           <span style={{ float: 'right' }}>
                             {getSymbolFromCurrency(
@@ -852,7 +853,7 @@ export default function FlightBooking() {
                             {fareInfo?.ItinTotalFare?.TotalFare?.Amount}
                           </span>
                         </h5>
-                        <h5 style={{ color: 'white' }}>
+                        <h5>
                           You Pay :{' '}
                           <span style={{ float: 'right' }}>
                             {getSymbolFromCurrency(
