@@ -10,7 +10,7 @@ import {
   minuteToTime,
   simplifyTime,
 } from "../../public/js/utils";
-import FlightSearch from "../FlightSearch/FlightSearch";
+import FlightSearch1 from "../FlightSearch1/FlightSearch1";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import { ToggleButtonGroup, ToggleButton, Table } from "react-bootstrap";
@@ -476,6 +476,7 @@ export default function FlightList() {
                   {" | "}
                   {minuteToTime(destination?.ElapsedTime)}
                 </h6>
+                
                 <h5 className="flight-info-name">
                   {
                     destination?.FlightSegment[
@@ -488,10 +489,12 @@ export default function FlightList() {
                       destination?.FlightSegment?.length - 1
                     ]?.ArrivalDateTime
                   )}
+                  
                 </h5>
               </div>
             ))}
             <h6>{displayItineraryPenalties(row)}</h6>
+            <h6 className="more-details">More Details</h6>
           </div>
         );
       },
@@ -560,8 +563,8 @@ export default function FlightList() {
     disablePageTitle: true,
     sizePerPageList: [
       {
-        text: "5",
-        value: 5,
+        text: "10",
+        value: 10,
       },
       {
         text: "10",
@@ -576,20 +579,23 @@ export default function FlightList() {
 
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
 
-      <div className="search-box">
-        <FlightSearch />
+      {/* <div className="search-box"> */}
+      <div style={{backgroundColor:"#16528e",paddingBottom:"100px", paddingTop:"50px"}}>
+
+        <FlightSearch1 />
       </div>
+      {/* </div> */}
 
-      <section className="breadcrumb-outer text-center flight-list-banner">
+      {/* <section className="breadcrumb-outer text-center flight-list-banner">
         <div className="container">
           <div className="breadcrumb-content">
             <h2>Flights For You</h2>
           </div>
         </div>
         <div className="section-overlay"></div>
-      </section>
+      </section> */}
 
       {loading ? (
         <p style={{ textAlign: "center" }}>
@@ -599,7 +605,7 @@ export default function FlightList() {
         <>
           <section
             className="flight-destinations"
-            style={{ paddingTop: "20px" }}
+            style={{ paddingTop: "30px" }}
           >
             {flightSearchData ? (
               <div className="container">
@@ -773,6 +779,15 @@ export default function FlightList() {
                           }
                         )}
                       </div>
+
+
+                      <div className="sidebar-item">
+                      <div className='detail-title'>
+                      <h3>Fare Details</h3>
+                      </div>
+                      </div>
+
+
                     </aside>
                   </div>
                 </div>

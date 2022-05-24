@@ -206,10 +206,9 @@ a {
     box-shadow: none !important;
 }
 
-.swiper-banner .slider {
-    /* height: 300px !important; */
+/* .swiper-banner .slider {
     height: 70vh;
-}
+} */
 
 .btn-my-blue {
     background-color: #0066a0;
@@ -261,10 +260,11 @@ a {
 
 
 @media(max-width: 480px) {
-    .swiper-banner .slider {
+    
+    /* .swiper-banner .slider {
         height: 400px !important;
         display: none;
-    }
+    } */
 
     .flight-info-card {
         width: 100%;

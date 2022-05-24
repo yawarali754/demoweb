@@ -412,7 +412,7 @@ const [status, setStatus] = useState(false);
   return (
     <>
       <div className="container">
-        <div className="search-outer">
+        <div className="search-outer1">
           <div className="search-content">
             <form onSubmit={handleFlightSearch}>
               <div className="btn-group btn-group-sm ">
@@ -612,7 +612,7 @@ const [status, setStatus] = useState(false);
                                   ? filterByCallback
                                   : filterByFields
                               }
-                              // filterBy={["fs", "city"]}
+                            //   filterBy={["fs", "city"]}
                               paginate
                               placeholder="Flying from"
                               labelKey={(option) =>
@@ -647,7 +647,7 @@ const [status, setStatus] = useState(false);
                                   ? filterByCallback
                                   : filterByFields
                               }
-                              // filterBy={["fs", "city"]}
+                            //   filterBy={["fs", "city"]}
                               paginate
                               placeholder="Flying to"
                               labelKey={(option) =>
@@ -1091,7 +1091,7 @@ const [status, setStatus] = useState(false);
                           style={{ width: "100%" }}
                           disabled={loading}
                         >
-                          {loading ? <CircularProgress size={22} /> : "Show Flight"}
+                          {loading ? <CircularProgress size={22} /> : "Modify Flight"}
                         </button>
                       </div>
                     </div>

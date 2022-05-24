@@ -1385,12 +1385,46 @@ ul.nav-mini li i {
     /* box-shadow: 0px 0px 20px #9b9b9b8f; */
 }
 
+.search-outer1 {
+    background-color: rgb(1, 22, 55,0.5);
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    /* border: .1px solid rgb(195, 195, 195); */
+    z-index: 10;
+    /* box-shadow: 0px 0px 20px #9b9b9b8f; */
+}
+
 .search-outer input {
     border-radius: 3px;
 }
 
 .search-outer label {
     color: #fff !important;
+}
+
+.search-outer1 input {
+    border-radius: 3px;
+}
+
+.search-outer1 label {
+    color: #fff !important;
+}
+
+.more-details{
+    align-items: center;
+    background: #011638;
+    color: white;
+    /* width: 100px; */
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: -3px 3px 2px #666;
+    border-radius: 2px;
 }
 
 
