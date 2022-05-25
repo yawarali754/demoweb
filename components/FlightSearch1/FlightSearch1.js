@@ -842,7 +842,7 @@ const [status, setStatus] = useState(false);
               </div> */}
 
                 
-                <div className="col-md-2 col-sm-6 srch-mrgn-btm" style={ MyFocusState ? { display: "block" } : { display: "none" }}>
+                <div className="col-md-2 col-sm-6 srch-mrgn-btm">
                   <div className="table_item">
                     <div className="form-group typeahead-dropdown">
                       <label htmlFor="airline">Airline</label>
@@ -865,7 +865,7 @@ const [status, setStatus] = useState(false);
                   </div>
                 </div>
 
-                <div className="col-md-2 col-sm-6 srch-mrgn-btm" style={ MyFocusState ? { display: "block" } : { display: "none" }}>
+                <div className="col-md-2 col-sm-6 srch-mrgn-btm" >
                   <div className="table_item">
                     <div className="form-group dropdown">
                       <label htmlFor="passengers">Passengers</label>
@@ -1091,7 +1091,7 @@ const [status, setStatus] = useState(false);
                           style={{ width: "100%" }}
                           disabled={loading}
                         >
-                          {loading ? <CircularProgress size={22} /> : "Modify Flight"}
+                          {loading ? <CircularProgress size={22} /> : "Modify Search"}
                         </button>
                       </div>
                     </div>

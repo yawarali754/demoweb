@@ -245,6 +245,8 @@ export default function FlightList() {
     return `${exchangePenaltyNote} | ${refundPenaltyNote}`;
   };
 
+  
+
   const expandRow = {
     renderer: (row) => {
       let fareInfos =
@@ -252,131 +254,7 @@ export default function FlightList() {
           ?.Cabin?.Cabin;
       return (
         <>
-          {row?.AirItinerary?.OriginDestinationOptions?.OriginDestinationOption.map(
-            (origin) => (
-              <div>
-                {origin?.FlightSegment.map((leg, index) => {
-                  return (
-                    <>
-                      <div className="outbound-panel-content ">
-                        <div>
-                          <div
-                            className={
-                              origin?.FlightSegment.length - 1 === index
-                                ? "detail-panel last-leg"
-                                : "detail-panel"
-                            }
-                          >
-                            <div className="box1">
-                              <div className="flight-name-logo">
-                                <div className="flight-content">
-                                  <span className="code">
-                                    {leg?.OperatingAirline?.Code}{" "}
-                                    {leg?.OperatingAirline?.FlightNumber}
-                                    {/* {console.log(leg)} */}
-                                  </span>
-                                  <span className="code">
-                                    {cabinConfirmation(fareInfos)}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="box2">
-                              <div className="flight-name-logo">
-                                <div className="flight-content">
-                                  <span className="code">Depart</span>
-                                  <span className="f-time">
-                                    {leg?.DepartureDateTime}
-                                  </span>
-
-                                  <span className="f-airport">
-                                    {leg?.DepartureAirport?.LocationCode}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* <div className='box2'>
-                            <span className='f-title'>Depart</span>
-                            <span className='f-time'>
-                              {leg?.DepartureDateTime}
-                            </span>
-
-                            <span className='f-airport'>
-                              {leg?.DepartureAirport?.LocationCode}
-                            </span>
-                          </div> */}
-
-                            <div className="box3">
-                              <div className="flight-name-logo">
-                                <div className="flight-content">
-                                  <span className="f-departure-return-status">
-                                    <i className="fa fa-long-arrow-right"></i>
-                                  </span>
-                                  <span className="f-duration">
-                                    {minuteToTime(leg?.ElapsedTime)}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* <div className='box3'>
-                            <span className='f-departure-return-status'>
-                              <i className='fa fa-long-arrow-right'></i>
-                            </span>
-                            <span className='f-duration'>
-                              {minuteToTime(leg?.ElapsedTime)}
-                            </span>
-                          </div> */}
-
-                            <div className="box4">
-                              <div className="flight-name-logo">
-                                <div className="flight-content">
-                                  <span className="f-title">Arrive</span>
-                                  <span className="f-time">
-                                    {leg?.ArrivalDateTime}
-                                  </span>
-
-                                  <span className="f-airport">
-                                    {leg?.ArrivalAirport?.LocationCode}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* <div className='box4'>
-                            <span className='f-title'>Arrive</span>
-                            <span className='f-time'>
-                              {leg?.ArrivalDateTime}
-                            </span>
-
-                            <span className='f-airport'>
-                              {leg?.ArrivalAirport?.LocationCode}
-                            </span>
-                          </div> */}
-                          </div>
-                        </div>
-                      </div>
-                      {origin?.FlightSegment.length - 1 !== index ? (
-                        <div className="layover-full">
-                          <p className="layover-text">
-                            {/* <span className='layover-icon'></span> */}
-                            <span className="layover-title">Layover</span>{" "}
-                            <span className="text"> | </span>{" "}
-                            <span className="text">
-                              {leg?.ArrivalAirport?.LocationCode}
-                            </span>
-                          </p>
-                        </div>
-                      ) : null}
-                    </>
-                  );
-                })}
-              </div>
-            )
-          )}
-          <div style={{ width: "100%" }}>
+        <div style={{ width: "100%" }}>
             <div
               style={{
                 float: "right",
@@ -424,6 +302,157 @@ export default function FlightList() {
               ))}
             </div>
           </div>
+          
+          {row?.AirItinerary?.OriginDestinationOptions?.OriginDestinationOption.map(
+            (origin) => (
+              <div>
+                {origin?.FlightSegment.map((leg, index) => {
+                  return (
+                    <>
+                      <div className="outbound-panel-content ">
+                        <div>
+                          <div
+                            className={
+                              origin?.FlightSegment.length - 1 === index
+                                ? "detail-panel last-leg"
+                                : "detail-panel"
+                            }
+                          >
+                            
+                            <div className="box1">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="code">
+                                  {/* {console.log("yawar1235", OriginDestinationOption)} */}
+                                    {leg?.OperatingAirline?.Code}{" "}
+                                    {leg?.OperatingAirline?.FlightNumber}
+                                    {/* {console.log(leg)} */}
+                                  </span>
+                                  <span className="code">
+                                    {cabinConfirmation(fareInfos)}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="box2">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="code">Depart</span>
+                                  <span className="f-time">
+                                    {leg?.DepartureDateTime}
+                                  </span>
+
+                                  <span className="f-airport">
+                                    {leg?.DepartureAirport?.LocationCode}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* <div className='box2'>
+                            <span className='f-title'>Depart</span>
+                            <span className='f-time'>
+                              {leg?.DepartureDateTime}
+                            </span>
+
+                            <span className='f-airport'>
+                              {leg?.DepartureAirport?.LocationCode}
+                            </span>
+                          </div> */}
+
+                            <div className="box3">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="f-departure-return-status">
+                                    <i className="fa fa-long-arrow-right"></i>
+                                  </span>
+                                  {/* <span className="f-duration">
+                                    {minuteToTime(leg?.ElapsedTime)}
+                                  </span> */}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* <div className='box3'>
+                            <span className='f-departure-return-status'>
+                              <i className='fa fa-long-arrow-right'></i>
+                            </span>
+                            <span className='f-duration'>
+                              {minuteToTime(leg?.ElapsedTime)}
+                            </span>
+                          </div> */}
+
+                            <div className="box4">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="f-title">Arrive</span>
+                                  <span className="f-time">
+                                    {leg?.ArrivalDateTime}
+                                  </span>
+
+                                  <span className="f-airport">
+                                    {leg?.ArrivalAirport?.LocationCode}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="box5">
+                              <div className="flight-name-logo">
+                                <div className="flight-content">
+                                  <span className="f-title"><b style={{fontWeight:"700"}}>Baggage</b></span>
+                                  <span className="f-airport" style={{fontWeight:"400"}}>
+            {row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Weight?row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Weight
+            +
+            row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Unit:
+            
+            row.AirItineraryPricingInfo[0]?.PTC_FareBreakdowns?.PTC_FareBreakdown[0]
+            ?.PassengerFare?.TPA_Extensions?.BaggageInformationList?.BaggageInformation[0]?.Allowance[0].Pieces+"PC"
+            }
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* <div className='box4'>
+                            <span className='f-title'>Arrive</span>
+                            <span className='f-time'>
+                              {leg?.ArrivalDateTime}
+                            </span>
+
+                            <span className='f-airport'>
+                              {leg?.ArrivalAirport?.LocationCode}
+                            </span>
+                          </div> */}
+                          </div>
+                        </div>
+                      </div>
+                      {origin?.FlightSegment.length - 1 !== index ? (
+                        <div className="layover-full">
+                          <p className="layover-text">
+                            {/* <span className='layover-icon'></span> */}
+                            <span className="layover-title">Layover</span>{" "}
+                            <span className="f-duration" style={{fontWeight:"400"}}>
+                            {minuteToTime(leg?.ElapsedTime)}
+                            </span>
+                            <span className="text"> | </span>{" "}
+                            <span className="text">
+                              {leg?.ArrivalAirport?.LocationCode}
+                            </span>
+                          </p>
+                        </div>
+                      ) : null}
+                    </>
+                  );
+                })}
+              </div>
+            )
+          )}
+          
         </>
       );
     },
@@ -582,7 +611,7 @@ export default function FlightList() {
       {/* <Banner /> */}
 
       {/* <div className="search-box"> */}
-      <div style={{backgroundColor:"#16528e",paddingBottom:"100px", paddingTop:"50px"}}>
+      <div style={{backgroundColor:"#16528e",paddingBottom:"40px"}}>
 
         <FlightSearch1 />
       </div>
