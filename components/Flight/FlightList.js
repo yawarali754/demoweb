@@ -302,8 +302,9 @@ export default function FlightList() {
               ))}
             </div>
           </div>
-          
+          {console.log("yawaraaaaaa", row)}
           {row?.AirItinerary?.OriginDestinationOptions?.OriginDestinationOption.map(
+            
             (origin) => (
               <div>
                 {origin?.FlightSegment.map((leg, index) => {
@@ -561,6 +562,7 @@ export default function FlightList() {
             Book Now
           </button>
         </Fragment>
+        
       ),
     },
   ];
