@@ -1382,7 +1382,7 @@ ul.nav-mini li i {
 .search-outer {
     background-color: rgb(1, 22, 55,0.5);
     position: relative;
-    top: -400px;
+    top: -350px;
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -8360,6 +8360,7 @@ body.style-tab::after {
         /* background: #0066a0; */
         background-color: rgb(1, 22, 55,0.9);
     }
+
 
     .footer-instagram li {
         width: 32.94%;
