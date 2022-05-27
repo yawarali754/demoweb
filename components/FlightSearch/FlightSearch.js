@@ -483,12 +483,12 @@ const [status, setStatus] = useState(false);
                             id="departure"
                             onPaginate={(e) => console.log("Results paginated")}
                             options={airports}
-                            filterBy={
-                              filterBy === 'callback'
-                                ? filterByCallback
-                                : filterByFields
-                            }
-                            // filterBy={["fs", "city"]}
+                            // filterBy={
+                            //   filterBy === 'callback'
+                            //     ? filterByCallback
+                            //     : filterByFields
+                            // }
+                            filterBy={["fs", "city"]}
                             paginate
                             placeholder="Flying from"
                             labelKey={(option) =>
@@ -516,12 +516,12 @@ const [status, setStatus] = useState(false);
                             id="arrival"
                             onPaginate={(e) => console.log("Results paginated")}
                             options={airports}
-                            filterBy={
-                              filterBy === 'callback'
-                                ? filterByCallback
-                                : filterByFields
-                            }
-                            // filterBy={["fs", "city"]}
+                            // filterBy={
+                            //   filterBy === 'callback'
+                            //     ? filterByCallback
+                            //     : filterByFields
+                            // }
+                            filterBy={["fs", "city"]}
                             paginate
                             placeholder="Flying to"
                             labelKey={(option) =>
@@ -607,12 +607,12 @@ const [status, setStatus] = useState(false);
                                 console.log("Results paginated")
                               }
                               options={airports}
-                              filterBy={
-                                filterBy === 'callback'
-                                  ? filterByCallback
-                                  : filterByFields
-                              }
-                              // filterBy={["fs", "city"]}
+                              // filterBy={
+                              //   filterBy === 'callback'
+                              //     ? filterByCallback
+                              //     : filterByFields
+                              // }
+                              filterBy={["fs", "city"]}
                               paginate
                               placeholder="Flying from"
                               labelKey={(option) =>
@@ -642,12 +642,12 @@ const [status, setStatus] = useState(false);
                                 console.log("Results paginated")
                               }
                               options={airports}
-                              filterBy={
-                                filterBy === 'callback'
-                                  ? filterByCallback
-                                  : filterByFields
-                              }
-                              // filterBy={["fs", "city"]}
+                              // filterBy={
+                              //   filterBy === 'callback'
+                              //     ? filterByCallback
+                              //     : filterByFields
+                              // }
+                              filterBy={["fs", "city"]}
                               paginate
                               placeholder="Flying to"
                               labelKey={(option) =>
