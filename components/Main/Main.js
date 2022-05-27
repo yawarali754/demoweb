@@ -29,12 +29,9 @@ export default function Main() {
 
   return (
     <div>
-      <div>
-        
-      </div>
-      <div className='search-box'>
+      {/* <div className='search-box'> */}
       <Banner />
-      </div>
+      {/* </div> */}
 
       <div className="search-box">
         <FlightSearch
