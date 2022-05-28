@@ -40,7 +40,7 @@ export default function Main() {
         />
       </div>
 
-	  <div className="intro-area pd-top-50">
+	  <div className="intro-area pd-top-50" >
           <div className="container">
             <div className="row">
               <div class="col-lg-4">
