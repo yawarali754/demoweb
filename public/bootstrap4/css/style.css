@@ -1381,10 +1381,13 @@ ul.nav-mini li i {
 
 .search-outer {
     background-color: rgb(1, 22, 55,0.5);
-    position: relative;
-    top: -80px;
+    position: absolute;
+    /* top: -80px; */
     /* top: -380px; */
-    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
     height: auto;
     margin: 0 auto;
     border-radius: 10px;
@@ -8357,6 +8360,7 @@ body.style-tab::after {
     }
 
     .search-box {
+        position: relative;
         padding-top: 30px;
         padding-bottom: 50px;
         /* background: #0066a0; */
