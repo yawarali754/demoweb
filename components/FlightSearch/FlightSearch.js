@@ -475,7 +475,7 @@ const [status, setStatus] = useState(false);
               <div className="row my-row">
                 {tripType !== "multiCity" ? (
                   <>
-                    <div className="col-md-2 col-sm-12">
+                    <div className="col-md-2 col-sm-6">
                       <div className="table_item">
                         <div className="form-group typeahead-dropdown">
                           <label htmlFor="departure">Flying From</label>
@@ -508,7 +508,7 @@ const [status, setStatus] = useState(false);
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-2 col-sm-12 srch-mrgn-btm">
+                    <div className="col-md-2 col-sm-6 ">
                       <div className="table_item">
                         <div className="form-group typeahead-dropdown">
                           <label htmlFor="arrival">Flying To</label>
@@ -632,7 +632,7 @@ const [status, setStatus] = useState(false);
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-2 col-sm-12">
+                      <div className="col-md-2 col-sm-6">
                         <div className="table_item">
                           <div className="form-group typeahead-dropdown">
                             <label htmlFor="arrival">Flying To</label>
@@ -667,7 +667,7 @@ const [status, setStatus] = useState(false);
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-2 col-sm-6 srch-mrgn-btm">
+                      <div className="col-md-2 col-sm-6 ">
                         <div className="table_item">
                           <div className="form-group">
                             <div className="input-group date">
@@ -931,14 +931,14 @@ const [status, setStatus] = useState(false);
                                               </div>
                                               <div className="right-area">
                                                 <span className="low-btn" onClick={SetCountAdult}>
-                                                  -
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"3px"}} width="15" height="18" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
                                                 </span>
                                                 <span id="adult" className="number">
                                                   {adultPassengers}
                                                 </span>
                                                 <span className="high-btn" onClick={() => setAdultPassengers(adultPassengers + 1)}>
                                                 {/* <i class="fa fa-plus" aria-hidden="true"></i> */}
-                                                +
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"2px"}} width="15" height="15" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                                                 </span>
                                               </div>
                                             </li>
@@ -949,13 +949,13 @@ const [status, setStatus] = useState(false);
                                               </div>
                                               <div className="right-area">
                                                 <span className="low-btn" onClick={SetCountYouth}>
-                                                  -
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"3px"}} width="15" height="18" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
                                                 </span>
                                                 <span id="adult" className="number">
                                                   {youthPassengers}
                                                 </span>
                                                 <span className="high-btn" onClick={() => setYouth(youthPassengers + 1)}>
-                                                  +
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"2px"}} width="15" height="15" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                                                 </span>
                                               </div>
                                             </li>
@@ -966,13 +966,13 @@ const [status, setStatus] = useState(false);
                                               </div>
                                               <div className="right-area">
                                                 <span className="low-btn" onClick={SetCountChild}>
-                                                  -
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"3px"}} width="15" height="18" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
                                                 </span>
                                                 <span id="children" className="number">
                                                   {childPassengers}
                                                 </span>
                                                 <span className="high-btn" onClick={() => setChildrens(childPassengers + 1)}>
-                                                  +
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"2px"}} width="15" height="15" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                                                 </span>
                                               </div>
                                             </li>
@@ -983,13 +983,13 @@ const [status, setStatus] = useState(false);
                                               </div>
                                               <div className="right-area">
                                                 <span className="low-btn" onClick={SetCountInfant}>
-                                                  -
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"3px"}} width="15" height="18" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
                                                 </span>
                                                 <span id="infant" className="number">
                                                   {infantPassengers}
                                                 </span>
                                                 <span className="high-btn" onClick={() => setInfant(infantPassengers + 1)}>
-                                                  +
+                                                <svg xmlns="http://www.w3.org/2000/svg" style={{alignItems:"center", justifyContent:"center", padding:"2px"}} width="15" height="15" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                                                 </span>
                                               </div>
                                             </li>

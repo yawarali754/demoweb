@@ -1,4 +1,4 @@
-html,
+
 body {
     background-color: #fbfbfb;
     padding: 0;
@@ -583,7 +583,8 @@ a {
     height: 20px;
     line-height: 18px;
     text-decoration: none;
-    width: 20px
+    width: 20px;
+    padding: 1px;
 }
 
 .travelers .travelers-list li .right-area .high-btn:hover, .travelers .travelers-list li .right-area .low-btn:hover {
@@ -604,7 +605,8 @@ a {
 
 .travelers .travelers-list li .right-area .low-btn {
     letter-spacing: -2px;
-    opacity: .5
+    opacity: .6;
+    padding: 1px;
 }
 
 .travelers .travelers-list li .right-area .number {

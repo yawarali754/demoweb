@@ -8275,7 +8275,7 @@ body.style-tab::after {
 
 @media (max-width: 991px) {
     .search-content {
-        padding: 10px 20px;
+        padding: 30px 20px;
     }
 
     .search-title {

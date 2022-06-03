@@ -21,8 +21,9 @@ export default function Footer() {
                           style={{ color: 'white' }}
                         ></i>{' '}
                         14 Church St, Wolverton, Milton Keynes MK12 5JN, United
-                        Kingdom
+                        Kingdom.
                       </li>
+                      <br/>
                       <li>
                         {' '}
                         <i
@@ -31,6 +32,7 @@ export default function Footer() {
                         ></i>
                         <a href='tel:(012)-345-6789'> (012)-345-6789</a>
                       </li>
+                      <br/>
                       <li>
                         <i
                           className='flaticon-mail'

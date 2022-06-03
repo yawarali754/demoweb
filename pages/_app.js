@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 // import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
 import ProtectedRoutes from '../public/js/ProtectedRoutes'
 // import '../public/css/style.css';
-import '../styles/DropDown.css';
+// import '../styles/DropDown.css';
 
 
 function MyApp({ Component, pageProps, router }) {
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps, router }) {
   ]
   return (
     <Provider store={store}>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
 
       {noNav.includes(pathname) ? null : <NavBar />}
       <ProtectedRoutes router={router}>
