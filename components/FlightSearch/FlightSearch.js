@@ -483,12 +483,12 @@ const [status, setStatus] = useState(false);
                             id="departure"
                             onPaginate={(e) => console.log("Results paginated")}
                             options={airports}
-                            // filterBy={
-                            //   filterBy === 'callback'
-                            //     ? filterByCallback
-                            //     : filterByFields
-                            // }
-                            filterBy={["fs", "city"]}
+                            filterBy={
+                              filterBy === 'callback'
+                                ? filterByCallback
+                                : filterByFields
+                            }
+                            // filterBy={["fs", "city"]}
                             paginate
                             placeholder="Flying from"
                             labelKey={(option) =>
@@ -516,12 +516,12 @@ const [status, setStatus] = useState(false);
                             id="arrival"
                             onPaginate={(e) => console.log("Results paginated")}
                             options={airports}
-                            // filterBy={
-                            //   filterBy === 'callback'
-                            //     ? filterByCallback
-                            //     : filterByFields
-                            // }
-                            filterBy={["fs", "city"]}
+                            filterBy={
+                              filterBy === 'callback'
+                                ? filterByCallback
+                                : filterByFields
+                            }
+                            // filterBy={["fs", "city"]}
                             paginate
                             placeholder="Flying to"
                             labelKey={(option) =>
@@ -595,8 +595,10 @@ const [status, setStatus] = useState(false);
                     </div>
                   </>
                 ) : (
+                
                   multiFlightSegmentForm.map((multiCity, index) => (
                     <React.Fragment key={index}>
+                      <div className='row'>
                       <div className="col-md-2 col-sm-6">
                         <div className="table_item">
                           <div className="form-group typeahead-dropdown ">
@@ -607,12 +609,12 @@ const [status, setStatus] = useState(false);
                                 console.log("Results paginated")
                               }
                               options={airports}
-                              // filterBy={
-                              //   filterBy === 'callback'
-                              //     ? filterByCallback
-                              //     : filterByFields
-                              // }
-                              filterBy={["fs", "city"]}
+                              filterBy={
+                                filterBy === 'callback'
+                                  ? filterByCallback
+                                  : filterByFields
+                              }
+                              // filterBy={["fs", "city"]}
                               paginate
                               placeholder="Flying from"
                               labelKey={(option) =>
@@ -642,12 +644,12 @@ const [status, setStatus] = useState(false);
                                 console.log("Results paginated")
                               }
                               options={airports}
-                              // filterBy={
-                              //   filterBy === 'callback'
-                              //     ? filterByCallback
-                              //     : filterByFields
-                              // }
-                              filterBy={["fs", "city"]}
+                              filterBy={
+                                filterBy === 'callback'
+                                  ? filterByCallback
+                                  : filterByFields
+                              }
+                              // filterBy={["fs", "city"]}
                               paginate
                               placeholder="Flying to"
                               labelKey={(option) =>
@@ -708,8 +710,10 @@ const [status, setStatus] = useState(false);
                           </div>
                         </div>
                       </div>
+                      {/* <div className='row'> */}
                       {/* <div className='col-md-2 col-sm-6 srch-mrgn-btm form-end-button'> */}
                       {index === 1 && multiFlightSegmentForm.length < 5 ? (
+                        
                         <div className="col-md-2 col-sm-6 srch-mrgn-btm form-end-button">
                           <Button onClick={addFlightSegment} variant="success">
                             <img
@@ -734,6 +738,7 @@ const [status, setStatus] = useState(false);
                         </div>
                       ) : null}
                       {/* </div> */}
+                      </div>
                     </React.Fragment>
                   ))
                 )}
