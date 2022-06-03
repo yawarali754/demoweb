@@ -29,13 +29,13 @@ export default function NavBar() {
             <div className='contact-info'>
               <p>
                 <a href='tel:(012)-345-6789' style={{color:"#fff"}}>
-                  <i className='flaticon-phone-call'></i> Phone: (012)-345-6789
+                  <i className='flaticon-phone-call'></i> Phone: (020)-123-4567
                 </a>
               </p>
               <p>
                 <a href='mailto:tourntravel@testmail.com' style={{color:"#fff"}}>
                   <i className='flaticon-mail'></i> Mail:
-                  tourntravel@testmail.com
+                  test@gmail.com
                 </a>
               </p>
             </div>

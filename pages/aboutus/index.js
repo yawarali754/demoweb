@@ -105,7 +105,7 @@ export default function index() {
                 <h3> More Info About Us </h3>
               </div>
               <p className='about-text'>
-                mkglobal.co.uk is an e-commerce company offering online travel
+                Lorem Ipsum is an e-commerce company offering online travel
                 products and services.
               </p>
               <p className='about-text'>
@@ -139,7 +139,7 @@ export default function index() {
               <br />
               <h3>24 Hour Service</h3>
               <p className='about-text'>
-                mkglobal.co.uk provide a 24 hour, 7 days a week, 365 days a year
+                Lorem Ipsum provide a 24 hour, 7 days a week, 365 days a year
                 personalised emergency service. Regardless of the time of the
                 day or what part of the world your travellers are in, they will
                 always speak to one of our travel consultants.
@@ -147,20 +147,20 @@ export default function index() {
               <br />
               <h3>Our Global People</h3>
               <p className='about-text'>
-                mkglobal.co.uk recognises that our people are our greatest asset
+                Lorem Ipsum recognises that our people are our greatest asset
                 and represent the lifeblood of the business. By providing an
                 excellent environment from which our team of people are able to
                 develop and add to their skills.
               </p>
               <p className='about-text'>
-                mkglobal.co.uk has a strong emphasis placed on effective
+                Lorem Ipsum has a strong emphasis placed on effective
                 teamwork. Our teams are based in London, Pakistan, India to
                 ensure that we serve our customers efficiently.
               </p>
               <br />
               <h3>A better World</h3>
               <p className='about-text'>
-                We, at mkglobal.co.uk believe in our environment and that is why
+                We, at Lorem Ipsum believe in our environment and that is why
                 have developed an ethical trading policy where we offer our
                 customers the option of offsetting their carbon emissions in an
                 easy, user-friendly way.

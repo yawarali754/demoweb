@@ -20,8 +20,7 @@ export default function Footer() {
                           aria-hidden='true'
                           style={{ color: 'white' }}
                         ></i>{' '}
-                        14 Church St, Wolverton, Milton Keynes MK12 5JN, United
-                        Kingdom.
+                        14th Street, Ontario London.
                       </li>
                       <br/>
                       <li>
@@ -30,7 +29,7 @@ export default function Footer() {
                           className='flaticon-phone-call'
                           style={{ color: 'white' }}
                         ></i>
-                        <a href='tel:(012)-345-6789'> (012)-345-6789</a>
+                        <a href='tel:(020)-345-6789'> (020)-123-4567</a>
                       </li>
                       <br/>
                       <li>
@@ -40,7 +39,7 @@ export default function Footer() {
                         ></i>
                         <a href='mailto:tourntravel@testmail.com'>
                           {' '}
-                          tourntravel@testmail.com
+                          test@gmail.com
                         </a>
                       </li>
                     </ul>
@@ -86,11 +85,10 @@ export default function Footer() {
             <div className='col-lg-6'>
               <div className='copyright-content'>
                 <p>
-                  2022 <i className='fa fa-copyright' aria-hidden='true'></i> MK
-                  Global. Designed & Developed by{' '}
-                  <a href='https://symbiantsystems.co.uk/' target='_blank'>
+                  2022 <i className='fa fa-copyright' aria-hidden='true'></i> Designed & Developed by{' '}
+                  {/* <a href='https://symbiantsystems.co.uk/' target='_blank'>
                 Symbiant Systems
-              </a>
+              </a> */}
                 </p>
               </div>
             </div>
